@@ -69,7 +69,7 @@ export const LoginFormArea = styled.form`
     height: 70%;
 
     > button {
-      margin-top: 32px;
+      margin-top: 56px;
     }
   }
 
@@ -81,6 +81,7 @@ export const LoginFormArea = styled.form`
 export const LoginFormAreaFieldsWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  position: relative;
   margin-top: 128px;
   width: 100%;
 
@@ -89,14 +90,41 @@ export const LoginFormAreaFieldsWrapper = styled.div`
   }
 
   @media (max-width: 800px) {
-    margin-top: 64px;
+    margin-top: 24px;
   }
 `;
 
 export const LoginFormAreaLogo = styled.h1`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const LoginFormAreaLogoImage = styled.img`
+  width: 90px;
+  height: 90px;
+
+  @media (max-width: 950px) {
+    width: 70px;
+    height: 70px;
+  }
+`;
+
+export const LoginFormAreaLogoText = styled.h1`
   font-family: "Enchanted Land", sans-serif;
   font-size: 92px;
   letter-spacing: 4px;
   margin: 0;
+  margin-left: 16px;
   user-select: none;
+
+  @media (max-width: 950px) {
+    font-size: 72px;
+  }
+`;
+
+export const LoginFormAreaFieldsWrapperErrorMessage = styled.small`
+  position: absolute;
+  bottom: -32px;
+  color: red;
 `;

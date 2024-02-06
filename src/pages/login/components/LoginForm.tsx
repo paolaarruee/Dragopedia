@@ -1,18 +1,25 @@
 import { FieldArea, Button } from "@/components/Elements";
-import { useLogin } from "../hooks/useLogin";
+import { useLoginForm } from "../hooks/useLoginForm";
 import * as S from "./styled";
 
 export const LoginForm = () => {
   const {
     handleSubmit,
-    invalidForm,
+    disabledSubmit,
+    loginError,
     handleUsernameChange,
     handlePasswordChange,
-  } = useLogin();
+  } = useLoginForm();
 
   return (
     <S.LoginFormArea onSubmit={handleSubmit}>
-      <S.LoginFormAreaLogo>Dragopédia</S.LoginFormAreaLogo>
+      <S.LoginFormAreaLogo>
+        <S.LoginFormAreaLogoImage
+          src="src/assets/images/logo.png"
+          alt="Dragopédia Logo Image"
+        />
+        <S.LoginFormAreaLogoText>Dragopédia</S.LoginFormAreaLogoText>
+      </S.LoginFormAreaLogo>
 
       <S.LoginFormAreaFieldsWrapper>
         <FieldArea
@@ -20,14 +27,21 @@ export const LoginForm = () => {
           type="text"
           onChange={handleUsernameChange}
         />
+
         <FieldArea
           label="Senha"
           type="password"
           onChange={handlePasswordChange}
         />
+
+        {loginError && (
+          <S.LoginFormAreaFieldsWrapperErrorMessage>
+            Usuário ou senha inválidos!
+          </S.LoginFormAreaFieldsWrapperErrorMessage>
+        )}
       </S.LoginFormAreaFieldsWrapper>
 
-      <Button type="submit" disabled={invalidForm}>
+      <Button type="submit" disabled={disabledSubmit}>
         Entrar
       </Button>
     </S.LoginFormArea>
