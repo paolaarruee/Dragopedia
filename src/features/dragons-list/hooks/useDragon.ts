@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 
 import { AxiosResponse } from "axios";
 
+import { DragonStory } from "@/types";
 import { deleteDragon, getDragonList } from "../api/";
-import { Dragon, DragonStory, UseDragonReturn } from "../types";
+import { Dragon, UseDragonReturn } from "../types";
 
 export const useDragon = (): UseDragonReturn => {
   const [dragonList, setDragonList] = useState<Dragon[]>([]);

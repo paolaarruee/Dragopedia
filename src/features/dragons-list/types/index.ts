@@ -6,13 +6,6 @@ export interface Dragon {
   type: string;
   histories: DragonStory[];
   id: string;
-  data: DragonExtraData;
-}
-
-export interface DragonExtraData {
-  name: string;
-  type: string;
-  id: string;
 }
 
 export interface UseDragonReturn {

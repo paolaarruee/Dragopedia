@@ -64,7 +64,6 @@ export const DragonsList = () => {
                       type,
                       histories,
                       id,
-                      data,
                     }: Dragon) => (
                       <TableRow key={id}>
                         <TableBodyCell>
