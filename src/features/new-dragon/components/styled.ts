@@ -73,7 +73,7 @@ export const NewDragonStoryFieldsDeleteButtonWrapper = styled.div`
   position: absolute;
   z-index: 101;
   top: -6px;
-  right: -6px;
+  right: -16px;
 
   > button {
     display: flex;

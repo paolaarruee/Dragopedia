@@ -19,7 +19,7 @@ export const useNewDragon = (): UseNewDragonReturn => {
   const handleFormReset = () => {
     setName("");
     setType("");
-    setStoriesList([storyInitialValues]);
+    setStoriesList([]);
   };
 
   const handleFormSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -36,7 +36,8 @@ export const useNewDragon = (): UseNewDragonReturn => {
     setIsLoading(true);
 
     registerDragon(newDragonPayload)
-      .then()
+      .then(() => alert('Sucesso ao cadastrar o dragão!'))
+      .catch(() => alert('Erro ao cadastrar o dragão!'))
       .finally(() => setIsLoading(false));
   };
 

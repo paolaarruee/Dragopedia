@@ -33,11 +33,26 @@ export const useDragon = (): UseDragonReturn => {
 
   const closeConfirmModal = () => setShowingConfirmModal(false);
 
+  const updateListAfterDelete = () => {
+    const toUpdateDragonsList: Dragon[] = [...dragonList];
+    const toDeleteIndex: number = dragonList.findIndex(
+      ({ id }: Dragon) => id === toDeleteId
+    );
+
+    toUpdateDragonsList.splice(toDeleteIndex, 1);
+
+    setDragonList(toUpdateDragonsList);
+  };
+
   const confirmDelete = () => {
     setIsDeleting(true);
 
     deleteDragon(toDeleteId)
-      .then(() => getDragons())
+      .then(() => {
+        alert("Sucesso ao excluir o dragão!");
+        updateListAfterDelete();
+      })
+      .catch(() => alert("Erro ao excluir o dragão!"))
       .finally(() => {
         setIsDeleting(false);
         setShowingConfirmModal(false);
