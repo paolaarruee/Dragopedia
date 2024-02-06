@@ -1,6 +1,6 @@
 import { FieldArea, Button } from "@/components/Elements";
-import { useLoginForm } from "../hooks/useLoginForm";
-import * as S from "./styled";
+import { useLoginForm } from "../hooks";
+import * as S from ".";
 
 export const LoginForm = () => {
   const {

@@ -1,5 +1,5 @@
 import { SectionContainerProps } from "./types";
-import * as S from './components/styled';
+import * as S from './components';
 
 export const SectionContainer = ({ title, children }: SectionContainerProps) => (
   <S.SectionContainer>

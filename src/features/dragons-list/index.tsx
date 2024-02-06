@@ -2,8 +2,8 @@ import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
-import { useDragon } from "./hooks/useDragon";
-import * as S from "./components/styled";
+import { useDragon } from "./hooks";
+import * as S from "./components";
 import { Dragon, UseDragonReturn } from "./types";
 import {
   Table,

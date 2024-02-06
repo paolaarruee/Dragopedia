@@ -1,4 +1,4 @@
-import * as S from "./components/styled";
+import * as S from "./components";
 
 export const Home = () => (
   <S.HomeContainer>

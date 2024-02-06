@@ -1,4 +1,4 @@
-import * as S from "./components/styled";
+import * as S from "./components";
 import { FieldAreaProps } from "./types";
 
 export const FieldArea = ({ label, type, onChange }: FieldAreaProps) => (

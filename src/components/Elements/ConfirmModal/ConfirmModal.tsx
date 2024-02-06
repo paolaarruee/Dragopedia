@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { Button, Loader } from "..";
 import { ConfirmModalProps } from "./types";
-import * as S from "./components/styled";
+import * as S from "./components";
 
 export const ConfirmModal = ({
   handleCancel,

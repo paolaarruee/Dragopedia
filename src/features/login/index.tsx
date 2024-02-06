@@ -1,8 +1,8 @@
 import { Navigate } from "react-router-dom";
 
 import { AuthContextData, useAuth } from "@/providers/auth";
-import { LoginForm } from "./components/LoginForm";
-import * as S from "./components/styled";
+import * as S from "./components";
+import { LoginForm } from "./components";
 
 export const Login = () => {
   const { loggedIn }: AuthContextData = useAuth();
