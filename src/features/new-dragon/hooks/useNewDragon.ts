@@ -15,7 +15,7 @@ export const useNewDragon = (): UseNewDragonReturn => {
   const [type, setType] = useState<string>("");
   const [isSaving, setIsSaving] = useState<boolean>(false);
   const [storiesList, setStoriesList] = useState<DragonStory[]>([
-    storyInitialValues,
+    { ...storyInitialValues },
   ]);
 
   const navigate: NavigateFunction = useNavigate();
@@ -62,7 +62,7 @@ export const useNewDragon = (): UseNewDragonReturn => {
   };
 
   const handleNewStory = () =>
-    setStoriesList([...storiesList, storyInitialValues]);
+    setStoriesList([...storiesList, { ...storyInitialValues }]);
 
   const handleStoryDelete = (index: number) => () => {
     const toUpdateStories: DragonStory[] = [...storiesList];

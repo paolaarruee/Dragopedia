@@ -20,11 +20,11 @@ export const useEditDragon = ({
   const [isSaving, setIsSaving] = useState<boolean>(false);
   const [isFetching, setIsFetching] = useState<boolean>(false);
   const [storiesList, setStoriesList] = useState<DragonStory[]>([
-    storyInitialValues,
+    { ...storyInitialValues },
   ]);
 
   const navigate: NavigateFunction = useNavigate();
-  
+
   const disabledSubmit: boolean = !name.length || !type.length || isSaving;
 
   const fetchDragonDetails = () => {
@@ -92,7 +92,7 @@ export const useEditDragon = ({
   };
 
   const handleNewStory = () =>
-    setStoriesList([...storiesList, storyInitialValues]);
+    setStoriesList([...storiesList, { ...storyInitialValues }]);
 
   const handleStoryDelete = (index: number) => () => {
     const toUpdateStories: DragonStory[] = [...storiesList];
