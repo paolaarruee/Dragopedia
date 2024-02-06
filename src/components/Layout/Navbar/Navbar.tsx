@@ -48,5 +48,3 @@ export const Navbar = () => {
     </S.NavbarWrapper>
   );
 };
-
-export default Navbar;

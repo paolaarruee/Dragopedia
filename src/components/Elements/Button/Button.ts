@@ -10,7 +10,7 @@ export const Button = styled.button`
   color: #fffeeb;
   border: none;
   border-radius: 4px;
-  transition: 0.1s ease-in-out;
+  transition: 100ms ease-in-out;
 
   &:hover:not(:disabled) {
     filter: brightness(130%);

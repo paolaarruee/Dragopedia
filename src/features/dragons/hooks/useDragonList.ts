@@ -1,8 +1,19 @@
+import { useEffect, useState } from "react";
+
+import { AxiosResponse } from "axios";
+
 import { getDragonList } from "../api/dragon-list";
-import { UseDragonListReturn } from "../types";
+import { Dragon, UseDragonListReturn } from "../types";
 
 export const useDragonList = (): UseDragonListReturn => {
-  const getAllDragons = () => getDragonList();
+  const [dragonList, setDragonList] = useState<Dragon[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  return { getAllDragons };
+  useEffect(() => {
+    getDragonList()
+      .then(({ data }: AxiosResponse<Dragon[]>) => setDragonList(data))
+      .finally(() => setIsLoading(false));
+  }, []);
+
+  return { dragonList, isLoading };
 };

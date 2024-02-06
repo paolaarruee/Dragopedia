@@ -4,7 +4,7 @@ import { Navbar } from "..";
 import * as S from "./styled";
 import { AuthContextData, useAuth } from "@/providers/auth";
 
-export const MainContainer = () => {
+export const AppWrapper = () => {
   const { loggedIn }: AuthContextData = useAuth();
 
   if (!loggedIn) {
@@ -12,16 +12,16 @@ export const MainContainer = () => {
   }
 
   return (
-    <S.MainWrapper>
+    <S.BackgroundWrapper>
       <S.GradientWrapper>
-        <Navbar />
-
         <S.ContentWrapper>
-          <Outlet />
+          <Navbar />
+
+          <S.Container>
+            <Outlet />
+          </S.Container>
         </S.ContentWrapper>
       </S.GradientWrapper>
-    </S.MainWrapper>
+    </S.BackgroundWrapper>
   );
 };
-
-export default MainContainer;

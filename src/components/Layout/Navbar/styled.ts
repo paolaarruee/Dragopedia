@@ -78,7 +78,7 @@ export const BaseMenuItem = css`
     border-bottom: 1px solid transparent;
     padding-bottom: 4px;
     margin-bottom: -5px;
-    transition: 0.2s ease-in-out;
+    transition: 200ms ease-in-out;
   }
 `;
 

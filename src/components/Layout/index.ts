@@ -1,2 +1,2 @@
-export * from './MainContainer';
+export * from './AppWrapper';
 export * from './Navbar';

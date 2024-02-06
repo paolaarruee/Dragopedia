@@ -1,7 +1,6 @@
-import { AxiosResponse } from "axios";
-
 export interface UseDragonListReturn {
-  getAllDragons: () => Promise<AxiosResponse>;
+  dragonList: Dragon[];
+  isLoading: boolean;
 }
 
 export interface DragonExtraData {

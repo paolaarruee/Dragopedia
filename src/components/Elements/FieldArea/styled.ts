@@ -33,7 +33,7 @@ export const Label = styled.label`
   top: 50%;
   transform: translateY(-50%);
   margin-left: 16px;
-  transition: top 0.2s ease-in-out, font-size 0.2s ease-in-out;
+  transition: top 200ms ease-in-out, font-size 200ms ease-in-out;
   z-index: 90;
 `;
 
