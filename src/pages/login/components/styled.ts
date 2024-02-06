@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const LoginContainer = styled.section`
   width: 100%;
   height: 100%;
-  background-image: url("src/assets/img/login-background.jpg");
+  background-image: url("src/assets/images/login-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
@@ -22,7 +22,7 @@ export const LoginFormArea = styled.div`
   &::before {
     content: "";
     position: absolute;
-    background-image: url("src/assets/img/login-waves.svg");
+    background-image: url("src/assets/images/login-waves.svg");
     top: 0;
     right: -898px;
     height: 100%;

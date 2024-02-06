@@ -1,14 +1,27 @@
+
 # Dragopédia
 
-Dragopédia é um projeto criado para um desafio de front-end proposto pela DB, cujo propósito é implementar uma aplicação web escrita em React sobre dragões.   
+  
 
-As tecnologias utilizadas para o desenvolvimento foram:
+Dragopédia é um projeto criado para um desafio de front-end proposto pela DB, cujo propósito é implementar uma aplicação web escrita em React sobre dragões.
+
+ 
+
+ #### As tecnologias utilizadas para o desenvolvimento foram:
+
+  
 
 * React.js 
-* TypeScript
+* TypeScript 
 * Vite
 * Styled Components
+* Axios
 * ESLint
 
+  
 
-Para rodar o projeto, basta utilizar o comando `npm start`.
+#### A estrutura de pastas do projeto foi elaborada seguindo o padrão [bulletproof-react](https://github.com/alan2207/bulletproof-react).
+
+
+ 
+Para rodar o projeto, basta rodar o comando `npm run dev`.
