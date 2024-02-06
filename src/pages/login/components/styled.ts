@@ -38,6 +38,10 @@ export const LoginFormArea = styled.div`
     }
   }
 
+  > button {
+    margin-top: 72px;
+  }
+
   @media (max-width: 2450px) {
     width: 30%;
   }
