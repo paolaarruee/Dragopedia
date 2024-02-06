@@ -24,11 +24,11 @@ export const ContentWrapper = styled.div`
 
 export const Container = styled.div`
   flex: 1;
-  padding: calc(104px - ${navbarSpacing}) 104px 104px;
+  padding: calc(72px - ${navbarSpacing}) 72px 72px;
   overflow-y: auto;
 
-  @media (max-width: 1460px) {
-   padding: calc(48px - ${navbarSpacing}) 48px 48px; 
+  @media (max-width: 1560px) {
+   padding: calc(32px - ${navbarSpacing}) 32px 32px; 
   }
 
   @media (max-width: 550px) {

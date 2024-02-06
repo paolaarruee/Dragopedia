@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
-import { BaseInput, BaseInputWrapper, BaseLabel } from "@/styles";
+import {
+  BaseInput,
+  BaseInputWrapper,
+  BaseLabel,
+} from "@/styles/partials/input";
 
 export const TextArea = styled.textarea`
   ${BaseInput}
-  
+
   resize: none;
 `;
 

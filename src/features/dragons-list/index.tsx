@@ -1,6 +1,6 @@
 import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faInfo, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 import { useDragon } from "./hooks";
 import * as S from "./components";
@@ -18,17 +18,22 @@ import {
   Button,
 } from "@/components/Elements";
 import { SectionContainer } from "@/components/Layout";
+import { DragonDetailsModal } from "./components";
 
 export const DragonsList = () => {
   const {
     dragonList,
     isLoading,
     isDeleting,
+    toShowDetailsId,
     showingConfirmModal,
-    handleDelete,
+    showingDetailsModal,
     closeConfirmModal,
+    closeDetailsModal,
     confirmDelete,
-    parseStoriesList,
+    getStoriesFullText,
+    handleDelete,
+    handleShowDetails,
   }: UseDragonReturn = useDragon();
 
   return (
@@ -38,6 +43,13 @@ export const DragonsList = () => {
           handleCancel={closeConfirmModal}
           handleConfirm={confirmDelete}
           isLoading={isDeleting}
+        />
+      )}
+
+      {showingDetailsModal && (
+        <DragonDetailsModal
+          dragonId={toShowDetailsId}
+          handleClose={closeDetailsModal}
         />
       )}
 
@@ -54,6 +66,7 @@ export const DragonsList = () => {
                     <TableHeadCell>Histórias</TableHeadCell>
                     <TableHeadCell>Identificador</TableHeadCell>
                     <TableHeadCell></TableHeadCell>
+                    <TableHeadCell></TableHeadCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -63,14 +76,32 @@ export const DragonsList = () => {
                         <TableBodyCell>
                           {moment(createdAt).format("DD/MM/yyyy")}
                         </TableBodyCell>
+
                         <TableBodyCell>{name}</TableBodyCell>
+
                         <TableBodyCell>{type}</TableBodyCell>
+
                         <TableBodyCell>
-                          <S.DragonHistoryCell>
-                            {parseStoriesList(histories)}
+                          <S.DragonHistoryCell
+                            title={getStoriesFullText(histories)}
+                          >
+                            {getStoriesFullText(histories)}
                           </S.DragonHistoryCell>
                         </TableBodyCell>
+
                         <TableBodyCell>{id}</TableBodyCell>
+
+                        <TableBodyCell>
+                          <S.ShowDetailsDragonButtonWrapper title="Detalhes">
+                            <Button
+                              type="button"
+                              onClick={handleShowDetails(id)}
+                            >
+                              <FontAwesomeIcon icon={faInfo} />
+                            </Button>
+                          </S.ShowDetailsDragonButtonWrapper>
+                        </TableBodyCell>
+
                         <TableBodyCell>
                           <S.DeleteDragonButtonWrapper title="Excluir">
                             <Button type="button" onClick={handleDelete(id)}>

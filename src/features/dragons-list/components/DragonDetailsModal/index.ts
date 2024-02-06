@@ -1,2 +1,2 @@
 export * from "./DragonDetailsModal";
-export * from "./styled";
+export * from "./types/";

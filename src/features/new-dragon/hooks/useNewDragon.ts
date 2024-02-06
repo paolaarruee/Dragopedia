@@ -25,8 +25,6 @@ export const useNewDragon = (): UseNewDragonReturn => {
   const handleFormSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    handleFormReset();
-
     const newDragonPayload: DragonBasicData = {
       name,
       type,
@@ -36,8 +34,11 @@ export const useNewDragon = (): UseNewDragonReturn => {
     setIsLoading(true);
 
     registerDragon(newDragonPayload)
-      .then(() => alert('Sucesso ao cadastrar o dragão!'))
-      .catch(() => alert('Erro ao cadastrar o dragão!'))
+      .then(() => {
+        handleFormReset();
+        alert("Sucesso ao cadastrar o dragão!");
+      })
+      .catch(() => alert("Erro ao cadastrar o dragão."))
       .finally(() => setIsLoading(false));
   };
 

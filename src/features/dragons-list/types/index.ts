@@ -13,8 +13,12 @@ export interface UseDragonReturn {
   isLoading: boolean;
   isDeleting: boolean;
   showingConfirmModal: boolean;
+  showingDetailsModal: boolean;
+  toShowDetailsId: string;
   confirmDelete: () => void;
+  closeDetailsModal: () => void;
   closeConfirmModal: () => void;
   handleDelete: (id: string) => () => void;
-  parseStoriesList: (storiesList: DragonStory[]) => string;
+  handleShowDetails: (id: string) => () => void;
+  getStoriesFullText: (storiesList: DragonStory[]) => string;
 }

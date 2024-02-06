@@ -6,6 +6,7 @@ import { SectionContainer } from "@/components/Layout";
 import * as S from "./components";
 import { useNewDragon } from "./hooks";
 import { DragonStory } from "@/types";
+import { UseNewDragonReturn } from "./types";
 
 export const NewDragon = () => {
   const {
@@ -22,7 +23,7 @@ export const NewDragon = () => {
     handleStoryDescriptionChange,
     handleNewStory,
     handleStoryDelete,
-  } = useNewDragon();
+  }: UseNewDragonReturn = useNewDragon();
 
   return (
     <SectionContainer title="Cadastrar Dragão">
@@ -53,8 +54,8 @@ export const NewDragon = () => {
               <S.NewDragonStoryFieldsWrapper key={index}>
                 <S.NewDragonStoryFieldsDeleteButtonWrapper>
                   <Button type="button" onClick={handleStoryDelete(index)}>
-                  <FontAwesomeIcon icon={faClose} />
-                </Button>
+                    <FontAwesomeIcon icon={faClose} />
+                  </Button>
                 </S.NewDragonStoryFieldsDeleteButtonWrapper>
 
                 <S.NewDragonFieldWrapper>

@@ -37,7 +37,7 @@ export const NewDragonFieldsRow = styled.div`
   flex-wrap: wrap;
 
   &:not(:first-of-type) {
-    margin-top: 48px;
+    margin-top: 32px;
   }
 
   > * {
