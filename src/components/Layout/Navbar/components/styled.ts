@@ -65,9 +65,6 @@ export const BaseMenuItem = css`
 
   a {
     text-decoration: none;
-  }
-
-  & {
     position: relative;
     cursor: pointer;
     border-bottom: 1px solid transparent;
@@ -84,16 +81,19 @@ export const DefaultMenuItem = styled.li`
     color: white;
   }
 
-  &:hover {
-    border-bottom-color: white;
-  }
-
   &:not(:first-of-type) {
     margin-left: 56px;
   }
 
   &:last-of-type {
     margin-left: auto;
+  }
+
+  a {
+    &:hover,
+    &.active {
+      border-bottom-color: white;
+    }
   }
 `;
 
@@ -102,12 +102,15 @@ export const BurgerMenuItem = styled.li`
 
   width: fit-content;
 
-  &:hover {
-    border-bottom-color: #1d504c;
-  }
-
   &:not(:first-of-type) {
     margin-top: 32px;
+  }
+  
+  a {
+    &:hover,
+    &.active {
+      border-bottom-color: #1d504c;
+    }
   }
 `;
 

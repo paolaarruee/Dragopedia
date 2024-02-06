@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
@@ -13,8 +13,6 @@ export const Navbar = () => {
     handleLogout,
   });
 
-  console.log(location);
-
   return (
     <S.NavbarWrapper>
       <S.NavbarContainer>
@@ -26,7 +24,7 @@ export const Navbar = () => {
         <S.Menu>
           {menuItems.map(({ label, params }: MenuItem) => (
             <S.DefaultMenuItem key={label}>
-              <Link {...params}>{label}</Link>
+              <NavLink {...params}>{label}</NavLink>
             </S.DefaultMenuItem>
           ))}
         </S.Menu>
@@ -42,7 +40,7 @@ export const Navbar = () => {
         <S.BurgerMenuOptions>
           {menuItems.map(({ label, params }: MenuItem) => (
             <S.BurgerMenuItem key={label}>
-              <Link {...params}>{label}</Link>
+              <NavLink {...params}>{label}</NavLink>
             </S.BurgerMenuItem>
           ))}
         </S.BurgerMenuOptions>

@@ -30,7 +30,7 @@ export const useNavbar = ({
     },
     {
       label: "Sair",
-      params: { to: "#", onClick: handleLogout },
+      params: { to: "/login", onClick: handleLogout },
     },
   ];
 
