@@ -16,7 +16,7 @@ export const LoginFormArea = styled.div`
   align-items: center;
   padding: 176px 32px 0 72px;
   height: 100%;
-  width: 20%;
+  width: 25%;
   background: #fffeeb;
 
   &::before {
