@@ -33,7 +33,7 @@ export const DragonsList = () => {
         <ConfirmModal
           handleCancel={closeConfirmModal}
           handleConfirm={confirmDelete}
-          disableActions={isLoading}
+          loading={isLoading}
         />
       )}
 

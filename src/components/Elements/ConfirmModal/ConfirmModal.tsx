@@ -1,14 +1,14 @@
 import { faWarning } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { Button } from "..";
+import { Button, Loader } from "..";
 import { ConfirmModalProps } from "./types";
 import * as S from "./components/styled";
 
 export const ConfirmModal = ({
   handleCancel,
   handleConfirm,
-  disableActions
+  loading,
 }: ConfirmModalProps) => {
   return (
     <S.Backdrop>
@@ -19,10 +19,19 @@ export const ConfirmModal = ({
           </S.DialogIcon>
           Você tem certeza de que deseja executar essa ação?
         </S.DialogBody>
-        
+
         <S.DialogFooter>
-          <Button onClick={handleCancel} disabled={disableActions}>Cancelar</Button>
-          <Button onClick={handleConfirm} disabled={disableActions}>Confirmar</Button>
+          <Button onClick={handleCancel} disabled={loading}>
+            Cancelar
+          </Button>
+          <Button onClick={handleConfirm} disabled={loading}>
+            {loading && (
+              <S.DialogLoaderWrapper>
+                <Loader size="24px" />
+              </S.DialogLoaderWrapper>
+            )}
+            Confirmar
+          </Button>
         </S.DialogFooter>
       </S.Dialog>
     </S.Backdrop>

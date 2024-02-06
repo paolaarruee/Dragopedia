@@ -9,10 +9,11 @@ const SpinnerAnimation = keyframes`
 `;
 
 export const Loader = styled.span<LoaderProps>`
+  display: block;
   width: ${({ size }) => size || "100px"};
   height: ${({ size }) => size || "100px"};
   border-radius: 50%;
-  border: 5px solid rgba(29, 80, 76, 0.2);
-  border-left: 5px solid #1d504c;
+  border: 4px solid rgba(29, 80, 76, 0.2);
+  border-left: 4px solid #1d504c;
   animation: ${SpinnerAnimation} 800ms linear infinite;
 `;
