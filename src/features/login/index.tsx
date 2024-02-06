@@ -8,7 +8,7 @@ export const Login = () => {
   const { loggedIn }: AuthContextData = useAuth();
 
   if (loggedIn) {
-    return <Navigate to="/home" />;
+    return <Navigate to="/inicio" />;
   }
 
   return (

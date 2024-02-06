@@ -7,21 +7,26 @@ export const Navbar = () => {
   const { handleLogout }: AuthContextData = useAuth();
 
   return (
-    <S.NavbarContainer>
-      <S.Logo>Logo</S.Logo>
+    <S.NavbarWrapper>
+      <S.NavbarContainer>
+        <S.NavbarLogo>
+          <S.NavbarLogoImage src="src/assets/images/logo.png" />
+          <S.NavbarLogoText>Dragopédia</S.NavbarLogoText>
+        </S.NavbarLogo>
 
-      <S.Menu>
-        <S.MenuItem>
-          <Link to="/home">Início</Link>
-        </S.MenuItem>
+        <S.Menu>
+          <S.MenuItem>
+            <Link to="/inicio">Início</Link>
+          </S.MenuItem>
 
-        <S.MenuItem>
-          <Link to="/lista-dragoes">Dragões</Link>
-        </S.MenuItem>
+          <S.MenuItem>
+            <Link to="/lista-dragoes">Dragões</Link>
+          </S.MenuItem>
 
-        <S.MenuItem onClick={handleLogout}>Sair</S.MenuItem>
-      </S.Menu>
-    </S.NavbarContainer>
+          <S.MenuItem onClick={handleLogout}>Sair</S.MenuItem>
+        </S.Menu>
+      </S.NavbarContainer>
+    </S.NavbarWrapper>
   );
 };
 

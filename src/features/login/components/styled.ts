@@ -90,7 +90,7 @@ export const LoginFormAreaFieldsWrapper = styled.div`
   }
 
   @media (max-width: 800px) {
-    margin-top: 24px;
+    margin-top: 72px;
   }
 `;
 
@@ -98,6 +98,7 @@ export const LoginFormAreaLogo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: -24px;
 `;
 
 export const LoginFormAreaLogoImage = styled.img`
