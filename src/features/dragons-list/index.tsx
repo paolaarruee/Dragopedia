@@ -58,13 +58,7 @@ export const DragonsList = () => {
                 </TableHead>
                 <TableBody>
                   {dragonList.map(
-                    ({
-                      createdAt,
-                      name,
-                      type,
-                      histories,
-                      id,
-                    }: Dragon) => (
+                    ({ createdAt, name, type, histories, id }: Dragon) => (
                       <TableRow key={id}>
                         <TableBodyCell>
                           {moment(createdAt).format("DD/MM/yyyy")}
@@ -78,11 +72,8 @@ export const DragonsList = () => {
                         </TableBodyCell>
                         <TableBodyCell>{id}</TableBodyCell>
                         <TableBodyCell>
-                          <S.DeleteDragonButtonWrapper>
-                            <IconButton
-                              title="Excluir"
-                              onClick={handleDelete(id)}
-                            >
+                          <S.DeleteDragonButtonWrapper title="Excluir">
+                            <IconButton type="button" onClick={handleDelete(id)}>
                               <FontAwesomeIcon icon={faTrash} />
                             </IconButton>
                           </S.DeleteDragonButtonWrapper>

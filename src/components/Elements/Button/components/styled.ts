@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Button = styled.button`
+export const ButtonWrapper = styled.button`
   display: flex;
   justify-content: center;
   width: 100%;
@@ -27,4 +27,12 @@ export const Button = styled.button`
     background-color: #e4e4e4;
     color: #c5c5c5;
   }
+`;
+
+export const ButtonLoader = styled.div`
+  > span {
+    border-left-color: #fffeeb;
+  }
+
+  margin-right: 16px;
 `;

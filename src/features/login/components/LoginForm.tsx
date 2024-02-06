@@ -1,9 +1,4 @@
-import {
-  FieldArea,
-  Button,
-  LoaderButtonWrapper,
-  Loader,
-} from "@/components/Elements";
+import { FieldArea, Button } from "@/components/Elements";
 import { useLoginForm } from "../hooks";
 import * as S from ".";
 
@@ -47,14 +42,12 @@ export const LoginForm = () => {
         )}
       </S.LoginFormAreaFieldsWrapper>
 
-      <Button type="submit" disabled={disabledSubmit}>
-        {isLoading && (
-          <LoaderButtonWrapper>
-            <Loader size="24px" />
-          </LoaderButtonWrapper>
-        )}
-        Entrar
-      </Button>
+      <Button
+        type="submit"
+        disabled={disabledSubmit}
+        isLoading={isLoading}
+        label="Entrar"
+      />
     </S.LoginFormArea>
   );
 };

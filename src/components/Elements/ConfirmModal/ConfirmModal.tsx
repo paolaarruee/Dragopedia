@@ -1,7 +1,7 @@
 import { faWarning } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { Button, Loader, LoaderButtonWrapper } from "..";
+import { Button } from "..";
 import { ConfirmModalProps } from "./types";
 import * as S from "./components";
 
@@ -21,18 +21,20 @@ export const ConfirmModal = ({
         </S.DialogBody>
 
         <S.DialogFooter>
-          <Button type="button" onClick={handleCancel} disabled={isLoading}>
-            Cancelar
-          </Button>
+          <Button
+            label="Cancelar"
+            type="button"
+            disabled={isLoading}
+            onClick={handleCancel}
+          />
 
-          <Button type="button" onClick={handleConfirm} disabled={isLoading}>
-            {isLoading && (
-              <LoaderButtonWrapper>
-                <Loader size="24px" />
-              </LoaderButtonWrapper>
-            )}
-            Confirmar
-          </Button>
+          <Button
+            label="Confirmar"
+            type="button"
+            disabled={isLoading}
+            onClick={handleConfirm}
+            isLoading={isLoading}
+          />
         </S.DialogFooter>
       </S.Dialog>
     </S.Backdrop>
