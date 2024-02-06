@@ -17,11 +17,11 @@ export const Menu = styled.ul`
   display: flex;
   align-items: center;
 
-  @media (max-width: 760px) {
+  @media (max-width: 1100px) {
     margin: 0;
   }
 
-  @media (max-width: 568px) {
+  @media (max-width: 840px) {
     display: none;
   }
 `;
@@ -33,7 +33,7 @@ export const BurgerMenu = styled.button`
   margin-left: auto;
   cursor: pointer;
 
-  @media (max-width: 568px) {
+  @media (max-width: 840px) {
     display: initial;
   }
 `;

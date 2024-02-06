@@ -1,7 +1,4 @@
-export interface DragonStory {
-  title: string;
-  story: string;
-}
+import { DragonStory } from "@/types";
 
 export interface Dragon {
   createdAt: string;

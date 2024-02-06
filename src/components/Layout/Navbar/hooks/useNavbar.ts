@@ -16,11 +16,17 @@ export const useNavbar = ({
     },
     {
       label: "Lista de Dragões",
-      params: { to: "/lista-dragoes", onClick: () => setShowingBurgerMenu(false) },
+      params: {
+        to: "/lista-dragoes",
+        onClick: () => setShowingBurgerMenu(false),
+      },
     },
     {
       label: "Cadastrar Dragão",
-      params: { to: "/cadastrar-dragao", onClick: () => setShowingBurgerMenu(false) },
+      params: {
+        to: "/cadastrar-dragao",
+        onClick: () => setShowingBurgerMenu(false),
+      },
     },
     {
       label: "Sair",

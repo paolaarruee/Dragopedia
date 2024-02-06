@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const DragonList = styled.div`
+export const DragonsListContainer = styled.div`
   width: 100%;
   align-self: flex-start;
   padding-bottom: 48px;

@@ -22,7 +22,7 @@ Dragopédia é um projeto criado para um desafio de front-end proposto pela DB, 
 
 
 
-Obs: para o desenvolvimento da estrutura do login, implementei uma estrutura de login fake utilizando o localStorage como base de dados.
+Obs: para o desenvolvimento da estrutura do login, implementei uma estrutura de login fake utilizando o localStorage como base de dados. O login/senha padrão cadastrados são paola/paola123.
 
 
 Para rodar o projeto, basta rodar o comando `npm run dev`.

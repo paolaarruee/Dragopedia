@@ -8,7 +8,7 @@ import * as S from "./components";
 export const ConfirmModal = ({
   handleCancel,
   handleConfirm,
-  loading,
+  isLoading,
 }: ConfirmModalProps) => {
   return (
     <S.Backdrop>
@@ -21,11 +21,12 @@ export const ConfirmModal = ({
         </S.DialogBody>
 
         <S.DialogFooter>
-          <Button onClick={handleCancel} disabled={loading}>
+          <Button type="button" onClick={handleCancel} disabled={isLoading}>
             Cancelar
           </Button>
-          <Button onClick={handleConfirm} disabled={loading}>
-            {loading && (
+          
+          <Button type="button" onClick={handleConfirm} disabled={isLoading}>
+            {isLoading && (
               <S.DialogLoaderWrapper>
                 <Loader size="24px" />
               </S.DialogLoaderWrapper>

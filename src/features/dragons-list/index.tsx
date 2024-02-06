@@ -37,14 +37,14 @@ export const DragonsList = () => {
         <ConfirmModal
           handleCancel={closeConfirmModal}
           handleConfirm={confirmDelete}
-          loading={isDeleting}
+          isLoading={isDeleting}
         />
       )}
 
       <SectionContainer title="Lista de Dragões">
         <>
           {!isLoading && (
-            <S.DragonList>
+            <S.DragonsListContainer>
               <Table>
                 <TableHead>
                   <TableRow>
@@ -53,7 +53,6 @@ export const DragonsList = () => {
                     <TableHeadCell>Tipo</TableHeadCell>
                     <TableHeadCell>Histórias</TableHeadCell>
                     <TableHeadCell>Identificador</TableHeadCell>
-                    <TableHeadCell>Dados adicionais</TableHeadCell>
                     <TableHeadCell></TableHeadCell>
                   </TableRow>
                 </TableHead>
@@ -79,7 +78,6 @@ export const DragonsList = () => {
                           </S.DragonHistoryCell>
                         </TableBodyCell>
                         <TableBodyCell>{id}</TableBodyCell>
-                        <TableBodyCell>{}</TableBodyCell>
                         <TableBodyCell>
                           <S.DeleteDragonButtonWrapper>
                             <IconButton
@@ -103,7 +101,7 @@ export const DragonsList = () => {
                   )}
                 </TableBody>
               </Table>
-            </S.DragonList>
+            </S.DragonsListContainer>
           )}
 
           {isLoading && <Loader size="100px" />}

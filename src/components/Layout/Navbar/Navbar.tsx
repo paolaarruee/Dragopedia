@@ -13,6 +13,8 @@ export const Navbar = () => {
     handleLogout,
   });
 
+  console.log(location);
+
   return (
     <S.NavbarWrapper>
       <S.NavbarContainer>

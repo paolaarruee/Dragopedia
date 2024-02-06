@@ -44,6 +44,14 @@ export const useDragon = (): UseDragonReturn => {
   };
 
   const parseStoryList = (stories: DragonStory[]): string => {
+    const hasValidStories: boolean =
+      !!stories?.length &&
+      stories.some(({ title, story }: DragonStory) => title && story);
+
+    if (!hasValidStories) {
+      return "";
+    }
+
     return stories.reduce(
       (acc: string, { title, story }: DragonStory) =>
         acc + `${title}: ${story}`,
