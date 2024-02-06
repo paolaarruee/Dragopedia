@@ -3,7 +3,7 @@
 
   
 
-Dragopédia é um projeto criado para um desafio de front-end proposto pela DB, cujo propósito é implementar uma aplicação web escrita em React sobre dragões.
+Dragopédia é um projeto criado para um desafio de front-end proposto pela DB, cujo propósito é implementar uma aplicação web sobre dragões escrita em React.
 
  
 
