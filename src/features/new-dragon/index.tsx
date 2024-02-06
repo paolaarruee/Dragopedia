@@ -1,16 +1,13 @@
-import {
-  DragonFormContainer,
-  DragonFormContainerProps,
-  SectionContainer,
-} from "@/components/Layout";
+import { DragonFormContainer, SectionContainer } from "@/components/Layout";
 import { useNewDragon } from "./hooks";
+import { UseNewDragonReturn } from "./types";
 
 export const NewDragon = () => {
-  const dragonFormContainerProps: DragonFormContainerProps = useNewDragon();
+  const useNewDragonReturn: UseNewDragonReturn = useNewDragon();
 
   return (
     <SectionContainer title="Cadastrar Dragão">
-      <DragonFormContainer {...dragonFormContainerProps} />
+      <DragonFormContainer {...useNewDragonReturn} />
     </SectionContainer>
   );
 };

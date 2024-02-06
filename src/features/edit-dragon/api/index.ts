@@ -1,1 +1,1 @@
-export * from "./edit.dragon";
+export * from "./edit-dragon";

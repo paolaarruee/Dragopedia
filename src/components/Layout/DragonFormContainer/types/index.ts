@@ -4,7 +4,7 @@ import { DragonStory } from "@/types";
 
 export interface DragonFormContainerProps {
   disabledSubmit: boolean;
-  isLoading: boolean;
+  isSaving: boolean;
   name: string;
   type: string;
   storiesList: DragonStory[];

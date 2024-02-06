@@ -4,7 +4,7 @@ import { faEdit, faInfo, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 import { useDragon } from "./hooks";
 import * as S from "./components";
-import { Dragon, UseDragonReturn } from "./types";
+import { UseDragonReturn } from "./types";
 import {
   Table,
   TableHead,
@@ -19,12 +19,12 @@ import {
 } from "@/components/Elements";
 import { SectionContainer } from "@/components/Layout";
 import { DragonDetailsModal } from "./components";
-import { Link } from "react-router-dom";
+import { Dragon } from "@/types";
 
 export const DragonsList = () => {
   const {
     dragonList,
-    isLoading,
+    isFetching,
     isDeleting,
     toShowDetailsId,
     showingConfirmModal,
@@ -56,7 +56,7 @@ export const DragonsList = () => {
 
       <SectionContainer title="Lista de Dragões">
         <>
-          {!isLoading && (
+          {!isFetching && (
             <S.DragonsListContainer>
               <Table>
                 <TableHead>
@@ -99,7 +99,10 @@ export const DragonsList = () => {
                               </Button>
                             </S.ShowDragonDetailsButtonWrapper>
 
-                            <S.EditDragonButtonWrapper to={`/editar-dragao/${id}`} title="Editar">
+                            <S.EditDragonButtonWrapper
+                              to={`/editar-dragao/${id}`}
+                              title="Editar"
+                            >
                               <Button type="button">
                                 <FontAwesomeIcon icon={faEdit} />
                               </Button>
@@ -128,7 +131,7 @@ export const DragonsList = () => {
             </S.DragonsListContainer>
           )}
 
-          {isLoading && <Loader size="100px" />}
+          {isFetching && <Loader size="100px" />}
         </>
       </SectionContainer>
     </>

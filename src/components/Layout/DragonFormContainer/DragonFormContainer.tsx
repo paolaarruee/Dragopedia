@@ -11,7 +11,7 @@ export const DragonFormContainer = ({
   name,
   type,
   disabledSubmit,
-  isLoading,
+  isSaving,
   storiesList,
   handleNameChange,
   handleTypeChange,
@@ -87,8 +87,8 @@ export const DragonFormContainer = ({
         <Button
           type="submit"
           disabled={disabledSubmit}
-          label="Cadastrar"
-          isLoading={isLoading}
+          label="Salvar"
+          isLoading={isSaving}
         />
       </S.NewDragonActionButtons>
     </S.NewDragonForm>

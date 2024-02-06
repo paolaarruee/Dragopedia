@@ -2,7 +2,7 @@ import { Dragon, DragonStory } from "@/types";
 
 export interface UseDragonReturn {
   dragonList: Dragon[];
-  isLoading: boolean;
+  isFetching: boolean;
   isDeleting: boolean;
   showingConfirmModal: boolean;
   showingDetailsModal: boolean;

@@ -2,9 +2,14 @@ import { FormEvent, ChangeEvent } from "react";
 
 import { DragonStory } from "@/types";
 
-export interface UseNewDragonReturn {
+export interface UseEditDragonParams {
+  id?: string;
+}
+
+export interface UseEditDragonReturn {
   disabledSubmit: boolean;
   isSaving: boolean;
+  isFetching: boolean;
   name: string;
   type: string;
   storiesList: DragonStory[];

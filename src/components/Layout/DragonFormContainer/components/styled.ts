@@ -105,7 +105,6 @@ export const AddStoryButtonWrapper = styled.div`
   align-items: center;
   width: 400px;
   height: 190px;
-  border: 6px dashed rgba(29, 80, 76, 0.6);
   border-radius: 4px;
 
   @media (max-width: 993px) {

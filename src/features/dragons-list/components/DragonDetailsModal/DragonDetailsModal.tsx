@@ -10,7 +10,7 @@ export const DragonDetailsModal = ({
   dragonId,
   handleClose,
 }: DragonDetailsModalProps) => {
-  const { dragonData, isLoading }: UseDragonDetailsModalReturn =
+  const { dragonData, isFetching }: UseDragonDetailsModalReturn =
     useDragonDetailsModal({
       dragonId,
     });
@@ -18,7 +18,7 @@ export const DragonDetailsModal = ({
   return (
     <S.Backdrop>
       <S.Dialog>
-        {!isLoading && (
+        {!isFetching && (
           <>
             <S.DialogBody>
               <S.DragonInfoWrapper>
@@ -59,7 +59,7 @@ export const DragonDetailsModal = ({
           </>
         )}
 
-        {isLoading && (
+        {isFetching && (
           <S.DialogLoaderWrapper>
             <Loader size="100px" />
           </S.DialogLoaderWrapper>

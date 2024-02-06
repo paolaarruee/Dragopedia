@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 
 import { AxiosResponse } from "axios";
 
-import { DragonStory } from "@/types";
+import { Dragon, DragonStory } from "@/types";
 import { deleteDragon, getDragonList } from "../api/";
-import { Dragon, UseDragonReturn } from "../types";
+import { UseDragonReturn } from "../types";
 
 export const useDragon = (): UseDragonReturn => {
   const [dragonList, setDragonList] = useState<Dragon[]>([]);
@@ -14,7 +14,7 @@ export const useDragon = (): UseDragonReturn => {
     useState<boolean>(false);
   const [showingDetailsModal, setShowingDetailsModal] =
     useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isFetching, setIsFetching] = useState<boolean>(true);
   const [isDeleting, setIsDeleting] = useState<boolean>(false);
 
   const fetchDragonList = () => {
@@ -26,8 +26,8 @@ export const useDragon = (): UseDragonReturn => {
 
         setDragonList(alphabeticalOrderedList);
       })
-      .catch(() => alert('Erro ao carregar a lista de dragões.'))
-      .finally(() => setIsLoading(false));
+      .catch(() => alert("Erro ao carregar a lista de dragões."))
+      .finally(() => setIsFetching(false));
   };
 
   const handleShowDetails = (id: string) => () => {
@@ -90,7 +90,7 @@ export const useDragon = (): UseDragonReturn => {
 
   return {
     dragonList,
-    isLoading,
+    isFetching,
     isDeleting,
     toShowDetailsId,
     showingConfirmModal,

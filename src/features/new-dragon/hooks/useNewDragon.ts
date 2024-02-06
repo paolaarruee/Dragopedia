@@ -1,25 +1,31 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 
+import { NavigateFunction, useNavigate } from "react-router-dom";
+
 import { UseNewDragonReturn } from "../types";
 import { registerDragon } from "../api";
 import { DragonBasicData, DragonStory } from "@/types";
 
 const storyInitialValues: DragonStory = { title: "", story: "" };
 
+const DRAGON_LIST_ROUTE: string = "/lista-dragoes";
+
 export const useNewDragon = (): UseNewDragonReturn => {
   const [name, setName] = useState<string>("");
   const [type, setType] = useState<string>("");
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isSaving, setIsSaving] = useState<boolean>(false);
   const [storiesList, setStoriesList] = useState<DragonStory[]>([
     storyInitialValues,
   ]);
 
-  const disabledSubmit = !name.length || !type.length || isLoading;
+  const navigate: NavigateFunction = useNavigate();
+
+  const disabledSubmit: boolean = !name.length || !type.length || isSaving;
 
   const handleFormReset = () => {
     setName("");
     setType("");
-    setStoriesList([]);
+    setStoriesList([storyInitialValues]);
   };
 
   const handleFormSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -31,15 +37,16 @@ export const useNewDragon = (): UseNewDragonReturn => {
       histories: storiesList,
     };
 
-    setIsLoading(true);
+    setIsSaving(true);
 
     registerDragon(newDragonPayload)
       .then(() => {
         handleFormReset();
+        navigate(DRAGON_LIST_ROUTE);
         alert("Sucesso ao cadastrar o dragão!");
       })
       .catch(() => alert("Erro ao cadastrar o dragão."))
-      .finally(() => setIsLoading(false));
+      .finally(() => setIsSaving(false));
   };
 
   const handleNameChange = ({
@@ -87,7 +94,7 @@ export const useNewDragon = (): UseNewDragonReturn => {
 
   return {
     disabledSubmit,
-    isLoading,
+    isSaving,
     name,
     type,
     storiesList,

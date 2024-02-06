@@ -1,3 +1,5 @@
+import { Dragon } from "@/types";
+
 export interface DragonDetailsModalProps {
   dragonId: string;
   handleClose: () => void;
@@ -8,6 +10,6 @@ export interface UseDragonDetailsModalParams {
 }
 
 export interface UseDragonDetailsModalReturn {
-  isLoading: boolean;
-  dragonData: any;
+  isFetching: boolean;
+  dragonData: Dragon;
 }
