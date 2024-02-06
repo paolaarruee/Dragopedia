@@ -16,7 +16,7 @@ import {
   IconButton,
 } from "@/components/Elements";
 
-export const Dragons = () => {
+export const DragonsList = () => {
   const { dragonList, isLoading }: UseDragonListReturn = useDragonList();
 
   return (

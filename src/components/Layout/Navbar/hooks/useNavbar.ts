@@ -15,8 +15,8 @@ export const useNavbar = ({
       params: { to: "/inicio", onClick: () => setShowingBurgerMenu(false) },
     },
     {
-      label: "Dragões",
-      params: { to: "/dragoes", onClick: () => setShowingBurgerMenu(false) },
+      label: "Lista de Dragões",
+      params: { to: "/lista-dragoes", onClick: () => setShowingBurgerMenu(false) },
     },
     {
       label: "Sair",

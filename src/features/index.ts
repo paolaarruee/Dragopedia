@@ -1,2 +1,2 @@
-export * from "./dragons";
+export * from "./dragons-list";
 export * from "./login";
