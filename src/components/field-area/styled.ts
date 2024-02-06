@@ -17,7 +17,7 @@ export const Input = styled.input`
       font-size: 12px;
       background-color: #fffeeb;
       border: 2px solid #fffeeb;
-      top: -7px;
+      top: -10px;
       left: 23px;
       margin: 0;
       transform: none;

@@ -1,35 +1,18 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 
-import styled from "styled-components";
-
+import Navbar from "./layouts/navbar";
+import RouterConfig from "./routes";
 import GlobalStyle from "./global-styles";
-import Login from "./pages/login";
-import Home from "./pages/home/components";
-import DragonList from "./pages/dragon-list";
-import NewDragon from "./pages/new-dragon";
-import Navbar from "./components/navbar";
-
-const MainContainer = styled.main`
-  width: 100%;
-  height: 100%;
-  padding: 64px;
-`;
+import MainContainer from "./layouts/main-container";
 
 export const App = () => (
   <>
     <GlobalStyle />
 
-    <Navbar />
+    {false && <Navbar />}
 
-    <MainContainer>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/listagem" element={<DragonList />} />
-          <Route path="/cadastrar" element={<NewDragon />} />
-        </Routes>
-      </BrowserRouter>
+    <MainContainer loggedIn={false}>
+      <RouterProvider router={RouterConfig} />
     </MainContainer>
   </>
 );
