@@ -62,7 +62,19 @@ export const LoginFormArea = styled.div`
   @media (max-width: 800px) {
     height: 60%;
     width: 100%;
-    padding: 48px 64px;
+    padding: 48px 32px;
+  }
+
+  @media (max-height: 820px) and (max-width: 800px) {
+    height: 70%;
+
+    > button {
+      margin-top: 32px;
+    }
+  }
+
+  @media (max-height: 650px) {
+    height: 100%;
   }
 `;
 
@@ -83,7 +95,7 @@ export const LoginFormAreaFieldsWrapper = styled.div`
 
 export const LoginFormAreaLogo = styled.h1`
   font-family: "Enchanted Land", sans-serif;
-  font-size: 100px;
+  font-size: 92px;
   letter-spacing: 4px;
   margin: 0;
   user-select: none;
