@@ -1,8 +1,8 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 
-import { DragonBasicData, UseNewDragonReturn } from "../types";
+import { UseNewDragonReturn } from "../types";
 import { registerDragon } from "../api";
-import { DragonStory } from "@/types";
+import { DragonBasicData, DragonStory } from "@/types";
 
 const storyInitialValues: DragonStory = { title: "", story: "" };
 

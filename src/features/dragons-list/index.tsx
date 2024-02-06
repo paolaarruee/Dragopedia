@@ -1,6 +1,6 @@
 import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInfo, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faEdit, faInfo, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 import { useDragon } from "./hooks";
 import * as S from "./components";
@@ -19,6 +19,7 @@ import {
 } from "@/components/Elements";
 import { SectionContainer } from "@/components/Layout";
 import { DragonDetailsModal } from "./components";
+import { Link } from "react-router-dom";
 
 export const DragonsList = () => {
   const {
@@ -64,8 +65,6 @@ export const DragonsList = () => {
                     <TableHeadCell>Nome</TableHeadCell>
                     <TableHeadCell>Tipo</TableHeadCell>
                     <TableHeadCell>Histórias</TableHeadCell>
-                    <TableHeadCell>Identificador</TableHeadCell>
-                    <TableHeadCell></TableHeadCell>
                     <TableHeadCell></TableHeadCell>
                   </TableRow>
                 </TableHead>
@@ -82,32 +81,36 @@ export const DragonsList = () => {
                         <TableBodyCell>{type}</TableBodyCell>
 
                         <TableBodyCell>
-                          <S.DragonHistoryCell
+                          <S.DragonHistoryCellWrapper
                             title={getStoriesFullText(histories)}
                           >
                             {getStoriesFullText(histories)}
-                          </S.DragonHistoryCell>
-                        </TableBodyCell>
-
-                        <TableBodyCell>{id}</TableBodyCell>
-
-                        <TableBodyCell>
-                          <S.ShowDetailsDragonButtonWrapper title="Detalhes">
-                            <Button
-                              type="button"
-                              onClick={handleShowDetails(id)}
-                            >
-                              <FontAwesomeIcon icon={faInfo} />
-                            </Button>
-                          </S.ShowDetailsDragonButtonWrapper>
+                          </S.DragonHistoryCellWrapper>
                         </TableBodyCell>
 
                         <TableBodyCell>
-                          <S.DeleteDragonButtonWrapper title="Excluir">
-                            <Button type="button" onClick={handleDelete(id)}>
-                              <FontAwesomeIcon icon={faTrash} />
-                            </Button>
-                          </S.DeleteDragonButtonWrapper>
+                          <S.DragonActionsCellWrapper>
+                            <S.ShowDragonDetailsButtonWrapper title="Detalhes">
+                              <Button
+                                type="button"
+                                onClick={handleShowDetails(id)}
+                              >
+                                <FontAwesomeIcon icon={faInfo} />
+                              </Button>
+                            </S.ShowDragonDetailsButtonWrapper>
+
+                            <S.EditDragonButtonWrapper to={`/editar-dragao/${id}`} title="Editar">
+                              <Button type="button">
+                                <FontAwesomeIcon icon={faEdit} />
+                              </Button>
+                            </S.EditDragonButtonWrapper>
+
+                            <S.DeleteDragonButtonWrapper title="Excluir">
+                              <Button type="button" onClick={handleDelete(id)}>
+                                <FontAwesomeIcon icon={faTrash} />
+                              </Button>
+                            </S.DeleteDragonButtonWrapper>
+                          </S.DragonActionsCellWrapper>
                         </TableBodyCell>
                       </TableRow>
                     )

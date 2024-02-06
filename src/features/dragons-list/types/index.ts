@@ -1,12 +1,4 @@
-import { DragonStory } from "@/types";
-
-export interface Dragon {
-  createdAt: string;
-  name: string;
-  type: string;
-  histories: DragonStory[];
-  id: string;
-}
+import { Dragon, DragonStory } from "@/types";
 
 export interface UseDragonReturn {
   dragonList: Dragon[];

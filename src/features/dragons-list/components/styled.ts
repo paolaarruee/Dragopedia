@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 const DragonsListActionButton = css`
@@ -17,11 +18,11 @@ export const DragonsListContainer = styled.div`
   overflow-x: auto;
 `;
 
-export const ShowDetailsDragonButtonWrapper = styled.div`
+export const ShowDragonDetailsButtonWrapper = styled.div`
   button {
     ${DragonsListActionButton};
 
-    background-color: rgba(0, 0, 255, .8);
+    background-color: rgba(0, 0, 255, 0.8);
   }
 `;
 
@@ -29,14 +30,31 @@ export const DeleteDragonButtonWrapper = styled.div`
   button {
     ${DragonsListActionButton};
 
-    background-color: rgba(255, 0, 0, .7);
+    background-color: rgba(255, 0, 0, 0.7);
   }
 `;
 
-export const DragonHistoryCell = styled.span`
+export const EditDragonButtonWrapper = styled(Link)`
+  button {
+    ${DragonsListActionButton};
+
+    background-color: rgba(255, 150, 50, 0.7);
+  }
+`;
+
+export const DragonHistoryCellWrapper = styled.span`
   display: block;
   max-width: 300px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+`;
+
+export const DragonActionsCellWrapper = styled.span`
+  display: flex;
+  justify-content: flex-end;
+
+  > *:not(:first-child) {
+    margin-left: 16px;
+  }
 `;

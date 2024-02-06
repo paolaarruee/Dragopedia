@@ -1,3 +1,5 @@
+import moment from "moment";
+
 import { Button, Loader } from "@/components/Elements";
 import * as S from "./components";
 import { DragonDetailsModalProps, UseDragonDetailsModalReturn } from ".";
@@ -22,7 +24,7 @@ export const DragonDetailsModal = ({
               <S.DragonInfoWrapper>
                 <S.DragonInfoTitle>Data de criação</S.DragonInfoTitle>
                 <S.DragonInfoContent>
-                  {dragonData.createdAt}
+                  {moment(dragonData.createdAt).format("DD/MM/yyyy")}
                 </S.DragonInfoContent>
               </S.DragonInfoWrapper>
 
@@ -48,11 +50,6 @@ export const DragonDetailsModal = ({
                     )
                   )}
                 </S.DragonInfoContent>
-              </S.DragonInfoWrapper>
-
-              <S.DragonInfoWrapper>
-                <S.DragonInfoTitle>Identificador</S.DragonInfoTitle>
-                <S.DragonInfoContent>{dragonData.id}</S.DragonInfoContent>
               </S.DragonInfoWrapper>
             </S.DialogBody>
 

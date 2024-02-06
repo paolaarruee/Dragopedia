@@ -2,7 +2,7 @@ import { FormEvent, ChangeEvent } from "react";
 
 import { DragonStory } from "@/types";
 
-export interface UseNewDragonReturn {
+export interface DragonFormContainerProps {
   disabledSubmit: boolean;
   isLoading: boolean;
   name: string;
