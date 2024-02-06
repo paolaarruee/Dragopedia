@@ -1,5 +1,5 @@
 import * as S from "./styled";
-import { MainContainerProps } from "./types";
+import { MainContainerProps } from "../types";
 
 export const MainContainer = ({ loggedIn, children }: MainContainerProps) => {
   if (!loggedIn) {

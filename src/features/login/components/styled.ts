@@ -9,7 +9,7 @@ export const LoginContainer = styled.section`
   overflow: hidden;
 `;
 
-export const LoginFormArea = styled.div`
+export const LoginFormArea = styled.form`
   position: relative;
   display: flex;
   flex-direction: column;

@@ -20,7 +20,7 @@ Dragopédia é um projeto criado para um desafio de front-end proposto pela DB, 
 
   
 
-#### A estrutura de pastas do projeto foi elaborada seguindo o padrão [bulletproof-react](https://github.com/alan2207/bulletproof-react).
+#### A estrutura de pastas do projeto foi elaborada considerando como base o padrão [bulletproof-react](https://github.com/alan2207/bulletproof-react).
 
 
  

@@ -1,9 +1,8 @@
 import { RouterProvider } from "react-router-dom";
 
-import Navbar from "./layouts/navbar";
-import RouterConfig from "./routes";
-import GlobalStyle from "./styles";
-import MainContainer from "./layouts/main-container";
+import { Navbar, MainContainer } from "@/components/Layout";
+import { RouterConfig } from "@/routes";
+import { GlobalStyle } from "@/styles";
 
 export const App = () => (
   <>
@@ -16,5 +15,3 @@ export const App = () => (
     </MainContainer>
   </>
 );
-
-export default App;

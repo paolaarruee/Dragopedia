@@ -1,11 +1,13 @@
-import Button from "../../components/button";
-import FieldArea from "../../components/field-area";
-import * as S from "./components/styled";
+import { FieldArea, Button } from "@/components/Elements";
+import * as S from "./styled";
+import { useLogin } from "../hooks/useLogin";
 
 export const Login = () => {
+  const { doLogin } = useLogin();
+
   return (
     <S.LoginContainer>
-      <S.LoginFormArea>
+      <S.LoginFormArea onSubmit={(a) => console.log(a)}>
         <S.LoginFormAreaLogo>Dragopédia</S.LoginFormAreaLogo>
 
         <S.LoginFormAreaFieldsWrapper>
@@ -18,5 +20,3 @@ export const Login = () => {
     </S.LoginContainer>
   );
 };
-
-export default Login;

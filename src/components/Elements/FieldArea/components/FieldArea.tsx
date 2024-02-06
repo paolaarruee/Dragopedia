@@ -1,5 +1,5 @@
 import * as S from "./styled";
-import { FieldAreaProps } from "./types";
+import { FieldAreaProps } from "../types";
 
 export const FieldArea = ({ label, type }: FieldAreaProps) => (
   <S.FieldAreaWrapper>
@@ -7,5 +7,3 @@ export const FieldArea = ({ label, type }: FieldAreaProps) => (
     <S.Label htmlFor={label}>{label}</S.Label>
   </S.FieldAreaWrapper>
 );
-
-export default FieldArea;
