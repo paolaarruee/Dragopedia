@@ -37,7 +37,7 @@ export const DragonsContentWrapper = styled.div`
 
   overflow-y: auto;
 
-  @media (max-width: 1060px) {
+  @media (max-width: 1120px) {
     padding: 0;
   }
 `;
@@ -56,4 +56,12 @@ export const DragonsContent = styled.div`
 export const DeleteDragonButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
+`;
+
+export const DragonHistoryCell = styled.span`
+  display: block;
+  max-width: 500px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;

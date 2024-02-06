@@ -49,7 +49,9 @@ export const Dragons = () => {
                       </TableBodyCell>
                       <TableBodyCell>{name}</TableBodyCell>
                       <TableBodyCell>{type}</TableBodyCell>
-                      <TableBodyCell>{histories}</TableBodyCell>
+                      <TableBodyCell>
+                        <S.DragonHistoryCell title={histories}>{histories}</S.DragonHistoryCell>
+                      </TableBodyCell>
                       <TableBodyCell>{id}</TableBodyCell>
                       <TableBodyCell>{}</TableBodyCell>
                       <TableBodyCell>

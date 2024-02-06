@@ -4,17 +4,24 @@ const tableRadius: string = "6px";
 
 export const Table = styled.table`
   width: 100%;
+  border-spacing: 0;
 `;
 
 export const TableHead = styled.thead`
-  background-color: rgba(255, 254, 235, .8);
+  background-color: #fffeeb;
 `;
 
 export const TableBody = styled.tbody`
-  background-color: rgba(255, 254, 235, .8);
+  > tr {
+    &:nth-child(even) {
+      background-color: rgba(255, 254, 235, 0.7);
+    }
+  }
 `;
 
 export const TableRow = styled.tr`
+  background-color: rgba(255, 254, 235, 0.6);
+
   &:last-of-type {
     td {
       &:first-of-type {
