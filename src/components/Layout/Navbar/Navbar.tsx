@@ -23,7 +23,7 @@ export const Navbar = () => {
 
         <S.Menu>
           {menuItems.map(({ label, params }: MenuItem) => (
-            <S.DefaultMenuItem>
+            <S.DefaultMenuItem key={label}>
               <Link {...params}>{label}</Link>
             </S.DefaultMenuItem>
           ))}
@@ -39,7 +39,7 @@ export const Navbar = () => {
       {showingBurgerMenu && (
         <S.BurgerMenuOptions>
           {menuItems.map(({ label, params }: MenuItem) => (
-            <S.BurgerMenuItem>
+            <S.BurgerMenuItem key={label}>
               <Link {...params}>{label}</Link>
             </S.BurgerMenuItem>
           ))}
