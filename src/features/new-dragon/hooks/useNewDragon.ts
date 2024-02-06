@@ -62,7 +62,7 @@ export const useNewDragon = (): UseNewDragonReturn => {
 
   const handleStoryDescriptionChange = ({
     target: { value },
-  }: ChangeEvent<HTMLInputElement>) => {
+  }: ChangeEvent<HTMLTextAreaElement>) => {
     setStoryDescription(value);
   };
 

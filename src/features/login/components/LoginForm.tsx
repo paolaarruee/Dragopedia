@@ -1,4 +1,4 @@
-import { FieldArea, Button } from "@/components/Elements";
+import { Input, Button } from "@/components/Elements";
 import { useLoginForm } from "../hooks";
 import * as S from ".";
 
@@ -23,13 +23,13 @@ export const LoginForm = () => {
       </S.LoginFormAreaLogo>
 
       <S.LoginFormAreaFieldsWrapper>
-        <FieldArea
+        <Input
           label="Nome de usuário"
           type="text"
           onChange={handleUsernameChange}
         />
 
-        <FieldArea
+        <Input
           label="Senha"
           type="password"
           onChange={handlePasswordChange}

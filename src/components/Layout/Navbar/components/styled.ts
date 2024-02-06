@@ -47,7 +47,7 @@ export const BurgerMenuIcon = styled.span`
 
 export const BurgerMenuOptions = styled.ul`
   position: fixed;
-  z-index: 100;
+  z-index: 1000;
   display: flex;
   flex-direction: column;
   top: 138px;
