@@ -1,8 +1,7 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
 
-import { Login, DragonsList } from "@/features";
+import { Home, Login, DragonsList, NewDragon } from "@/features";
 import { AppWrapper } from "@/components/Layout";
-import { Home } from "@/features/home";
 
 export const router = createBrowserRouter([
   {
@@ -15,6 +14,7 @@ export const router = createBrowserRouter([
     children: [
       { path: "/inicio", element: <Home /> },
       { path: "/lista-dragoes", element: <DragonsList /> },
+      { path: "/cadastrar-dragao", element: <NewDragon /> },
     ],
   },
   {

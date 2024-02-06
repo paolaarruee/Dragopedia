@@ -17,15 +17,18 @@ import {
   ConfirmModal,
   EmptyTable,
 } from "@/components/Elements";
+import { SectionContainer } from "@/components/Layout";
 
 export const DragonsList = () => {
   const {
     dragonList,
     isLoading,
+    isDeleting,
     showingConfirmModal,
     handleDelete,
     closeConfirmModal,
     confirmDelete,
+    parseStoryList,
   }: UseDragonReturn = useDragon();
 
   return (
@@ -34,18 +37,14 @@ export const DragonsList = () => {
         <ConfirmModal
           handleCancel={closeConfirmModal}
           handleConfirm={confirmDelete}
-          loading={isLoading}
+          loading={isDeleting}
         />
       )}
 
-      <S.DragonsContainer>
-        <S.DragonsTitleWrapper>
-          <S.DragonsTitle>Lista de Dragões</S.DragonsTitle>
-        </S.DragonsTitleWrapper>
-
-        <S.DragonsContentWrapper>
+      <SectionContainer title="Lista de Dragões">
+        <>
           {!isLoading && (
-            <S.DragonsContent>
+            <S.DragonList>
               <Table>
                 <TableHead>
                   <TableRow>
@@ -75,8 +74,8 @@ export const DragonsList = () => {
                         <TableBodyCell>{name}</TableBodyCell>
                         <TableBodyCell>{type}</TableBodyCell>
                         <TableBodyCell>
-                          <S.DragonHistoryCell title={histories}>
-                            {histories}
+                          <S.DragonHistoryCell>
+                            {parseStoryList(histories)}
                           </S.DragonHistoryCell>
                         </TableBodyCell>
                         <TableBodyCell>{id}</TableBodyCell>
@@ -104,12 +103,12 @@ export const DragonsList = () => {
                   )}
                 </TableBody>
               </Table>
-            </S.DragonsContent>
+            </S.DragonList>
           )}
 
           {isLoading && <Loader size="100px" />}
-        </S.DragonsContentWrapper>
-      </S.DragonsContainer>
+        </>
+      </SectionContainer>
     </>
   );
 };

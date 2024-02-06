@@ -1,7 +1,7 @@
 import { Navigate, Outlet } from "react-router-dom";
 
 import { Navbar } from "..";
-import * as S from "./styled";
+import * as S from "./components/styled";
 import { AuthContextData, useAuth } from "@/providers/auth";
 
 export const AppWrapper = () => {

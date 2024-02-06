@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 
 import { AxiosResponse } from "axios";
 
-import { deleteDragon, getDragonList } from "../api/dragon-list";
-import { Dragon, UseDragonReturn } from "../types";
+import { deleteDragon, getDragonList } from "../api/";
+import { Dragon, DragonStory, UseDragonReturn } from "../types";
 
 export const useDragon = (): UseDragonReturn => {
   const [dragonList, setDragonList] = useState<Dragon[]>([]);
@@ -11,10 +11,17 @@ export const useDragon = (): UseDragonReturn => {
   const [showingConfirmModal, setShowingConfirmModal] =
     useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isDeleting, setIsDeleting] = useState<boolean>(false);
 
   const getDragons = () => {
     getDragonList()
-      .then(({ data }: AxiosResponse<Dragon[]>) => setDragonList(data))
+      .then(({ data }: AxiosResponse<Dragon[]>) => {
+        const alphabeticalOrderedList: Dragon[] = data.sort(
+          (a: Dragon, b: Dragon) => (a.name > b.name ? 1 : -1)
+        );
+
+        setDragonList(alphabeticalOrderedList);
+      })
       .finally(() => setIsLoading(false));
   };
 
@@ -26,14 +33,22 @@ export const useDragon = (): UseDragonReturn => {
   const closeConfirmModal = () => setShowingConfirmModal(false);
 
   const confirmDelete = () => {
-    setIsLoading(true);
+    setIsDeleting(true);
 
     deleteDragon(toDeleteId)
       .then(() => getDragons())
       .finally(() => {
-        setIsLoading(false);
+        setIsDeleting(false);
         setShowingConfirmModal(false);
       });
+  };
+
+  const parseStoryList = (stories: DragonStory[]): string => {
+    return stories.reduce(
+      (acc: string, { title, story }: DragonStory) =>
+        acc + `${title}: ${story}`,
+      ""
+    );
   };
 
   useEffect(getDragons, []);
@@ -41,9 +56,11 @@ export const useDragon = (): UseDragonReturn => {
   return {
     dragonList,
     isLoading,
+    isDeleting,
     showingConfirmModal,
     handleDelete,
     closeConfirmModal,
     confirmDelete,
+    parseStoryList,
   };
 };

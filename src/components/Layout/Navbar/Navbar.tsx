@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 import { AuthContextData, useAuth } from "@/providers/auth";
-import * as S from "./styled";
+import * as S from "./components/styled";
 import { useNavbar } from "./hooks/useNavbar";
 import { MenuItem } from "./types";
 
