@@ -28,7 +28,7 @@ export const DragonsList = () => {
     handleDelete,
     closeConfirmModal,
     confirmDelete,
-    parseStoryList,
+    parseStoriesList,
   }: UseDragonReturn = useDragon();
 
   return (
@@ -67,7 +67,7 @@ export const DragonsList = () => {
                         <TableBodyCell>{type}</TableBodyCell>
                         <TableBodyCell>
                           <S.DragonHistoryCell>
-                            {parseStoryList(histories)}
+                            {parseStoriesList(histories)}
                           </S.DragonHistoryCell>
                         </TableBodyCell>
                         <TableBodyCell>{id}</TableBodyCell>

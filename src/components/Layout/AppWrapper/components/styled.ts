@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+const navbarSpacing: string = '48px';
+
 export const BackgroundWrapper = styled.main`
   height: 100%;
   width: 100%;
@@ -22,11 +24,11 @@ export const ContentWrapper = styled.div`
 
 export const Container = styled.div`
   flex: 1;
-  padding: 8px 48px 48px;
+  padding: calc(104px - ${navbarSpacing}) 104px 104px;
   overflow-y: auto;
 
-  @media (max-width: 1260px) {
-   padding: 8px 48px 48px; 
+  @media (max-width: 1460px) {
+   padding: calc(48px - ${navbarSpacing}) 48px 48px; 
   }
 
   @media (max-width: 550px) {

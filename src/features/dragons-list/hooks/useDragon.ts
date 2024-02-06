@@ -44,7 +44,7 @@ export const useDragon = (): UseDragonReturn => {
       });
   };
 
-  const parseStoryList = (stories: DragonStory[]): string => {
+  const parseStoriesList = (stories: DragonStory[]): string => {
     const hasValidStories: boolean =
       !!stories?.length &&
       stories.some(({ title, story }: DragonStory) => title && story);
@@ -70,6 +70,6 @@ export const useDragon = (): UseDragonReturn => {
     handleDelete,
     closeConfirmModal,
     confirmDelete,
-    parseStoryList,
+    parseStoriesList,
   };
 };

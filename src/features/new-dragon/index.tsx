@@ -1,32 +1,34 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faClose } from "@fortawesome/free-solid-svg-icons";
 
 import { Button, Input, TextArea } from "@/components/Elements";
 import { SectionContainer } from "@/components/Layout";
 import * as S from "./components";
 import { useNewDragon } from "./hooks";
+import { DragonStory } from "@/types";
 
 export const NewDragon = () => {
   const {
     disabledSubmit,
-    handleFormReset,
-    handleFormSubmit,
-    handleNameChange,
     name,
     handleTypeChange,
     type,
-    handleStoryNameChange,
-    storyName,
-    handleStoryDescriptionChange,
-    storyDescription,
+    storiesList,
     isLoading,
+    handleFormReset,
+    handleFormSubmit,
+    handleNameChange,
+    handleStoryNameChange,
+    handleStoryDescriptionChange,
+    handleNewStory,
+    handleStoryDelete,
   } = useNewDragon();
 
   return (
     <SectionContainer title="Cadastrar Dragão">
-      <S.NewDragonFormContainer onSubmit={handleFormSubmit}>
-        <S.NewDragonFormFieldsWrapper>
-          <S.NewDragonFieldRow>
+      <S.NewDragonContainer>
+        <S.NewDragonForm onSubmit={handleFormSubmit}>
+          <S.NewDragonFieldsRow>
             <S.NewDragonFieldWrapper>
               <Input
                 label="Nome"
@@ -44,37 +46,46 @@ export const NewDragon = () => {
                 value={type}
               />
             </S.NewDragonFieldWrapper>
-          </S.NewDragonFieldRow>
+          </S.NewDragonFieldsRow>
 
-          <S.NewDragonFieldRow>
-            <S.NewDragonFieldWrapper>
-              <Input
-                label="Título da História"
-                type="text"
-                onChange={handleStoryNameChange}
-                value={storyName}
-              />
-            </S.NewDragonFieldWrapper>
+          <S.NewDragonFieldsRow>
+            {storiesList.map(({ title, story }: DragonStory, index: number) => (
+              <S.NewDragonStoryFieldsWrapper key={index}>
+                <S.NewDragonStoryFieldsDeleteButtonWrapper>
+                  <Button type="button" onClick={handleStoryDelete(index)}>
+                  <FontAwesomeIcon icon={faClose} />
+                </Button>
+                </S.NewDragonStoryFieldsDeleteButtonWrapper>
 
-            <S.NewDragonFieldWrapper>
-              <TextArea
-                label="História"
-                onChange={handleStoryDescriptionChange}
-                value={storyDescription}
-              ></TextArea>
-            </S.NewDragonFieldWrapper>
-          </S.NewDragonFieldRow>
+                <S.NewDragonFieldWrapper>
+                  <Input
+                    label="Título da História"
+                    type="text"
+                    onChange={handleStoryNameChange(index)}
+                    value={title}
+                  />
+                </S.NewDragonFieldWrapper>
 
-          <S.NewDragonFieldRow>
-            <S.AddStoryButtonWrapper title="Adicionar história">
-              <Button type="button" onClick={() => {}}>
-                <FontAwesomeIcon icon={faPlus} />
-              </Button>
-            </S.AddStoryButtonWrapper>
-          </S.NewDragonFieldRow>
-        </S.NewDragonFormFieldsWrapper>
+                <S.NewDragonFieldWrapper>
+                  <TextArea
+                    label="História"
+                    onChange={handleStoryDescriptionChange(index)}
+                    value={story}
+                    rows={5}
+                  ></TextArea>
+                </S.NewDragonFieldWrapper>
+              </S.NewDragonStoryFieldsWrapper>
+            ))}
 
-        <S.NewDragonActionButtonsWrapper>
+            <S.NewDragonStoryFieldsWrapper>
+              <S.AddStoryButtonWrapper title="Adicionar história">
+                <Button type="button" onClick={handleNewStory}>
+                  <FontAwesomeIcon icon={faPlus} />
+                </Button>
+              </S.AddStoryButtonWrapper>
+            </S.NewDragonStoryFieldsWrapper>
+          </S.NewDragonFieldsRow>
+
           <S.NewDragonActionButtons>
             <Button type="reset" onClick={handleFormReset} label="Limpar" />
 
@@ -85,8 +96,8 @@ export const NewDragon = () => {
               isLoading={isLoading}
             />
           </S.NewDragonActionButtons>
-        </S.NewDragonActionButtonsWrapper>
-      </S.NewDragonFormContainer>
+        </S.NewDragonForm>
+      </S.NewDragonContainer>
     </SectionContainer>
   );
 };

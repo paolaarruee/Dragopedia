@@ -16,5 +16,5 @@ export interface UseDragonReturn {
   confirmDelete: () => void;
   closeConfirmModal: () => void;
   handleDelete: (id: string) => () => void;
-  parseStoryList: (storyList: DragonStory[]) => string;
+  parseStoriesList: (storiesList: DragonStory[]) => string;
 }

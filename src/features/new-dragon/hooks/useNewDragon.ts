@@ -2,42 +2,40 @@ import { ChangeEvent, FormEvent, useState } from "react";
 
 import { DragonBasicData, UseNewDragonReturn } from "../types";
 import { registerDragon } from "../api";
+import { DragonStory } from "@/types";
+
+const storyInitialValues: DragonStory = { title: "", story: "" };
 
 export const useNewDragon = (): UseNewDragonReturn => {
   const [name, setName] = useState<string>("");
   const [type, setType] = useState<string>("");
-  const [storyName, setStoryName] = useState<string>("");
-  const [storyDescription, setStoryDescription] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [storiesList, setStoriesList] = useState<DragonStory[]>([
+    storyInitialValues,
+  ]);
 
   const disabledSubmit = !name.length || !type.length || isLoading;
 
   const handleFormReset = () => {
     setName("");
     setType("");
-    setStoryName("");
-    setStoryDescription("");
+    setStoriesList([storyInitialValues]);
   };
 
   const handleFormSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    
+
     handleFormReset();
 
-    const newDragon: DragonBasicData = {
+    const newDragonPayload: DragonBasicData = {
       name,
       type,
-      histories: [
-        {
-          title: storyName,
-          story: storyDescription,
-        },
-      ],
+      histories: storiesList,
     };
 
     setIsLoading(true);
 
-    registerDragon(newDragon)
+    registerDragon(newDragonPayload)
       .then()
       .finally(() => setIsLoading(false));
   };
@@ -54,30 +52,50 @@ export const useNewDragon = (): UseNewDragonReturn => {
     setType(value);
   };
 
-  const handleStoryNameChange = ({
-    target: { value },
-  }: ChangeEvent<HTMLInputElement>) => {
-    setStoryName(value);
+  const handleNewStory = () =>
+    setStoriesList([...storiesList, storyInitialValues]);
+
+  const handleStoryDelete = (index: number) => () => {
+    const toUpdateStories: DragonStory[] = [...storiesList];
+
+    toUpdateStories.splice(index, 1);
+
+    setStoriesList(toUpdateStories);
   };
 
-  const handleStoryDescriptionChange = ({
-    target: { value },
-  }: ChangeEvent<HTMLTextAreaElement>) => {
-    setStoryDescription(value);
-  };
+  const handleStoryNameChange =
+    (index: number) =>
+    ({ target: { value } }: ChangeEvent<HTMLInputElement>) => {
+      const toUpdateStories: DragonStory[] = [...storiesList];
+
+      toUpdateStories[index].title = value;
+
+      setStoriesList(toUpdateStories);
+    };
+
+  const handleStoryDescriptionChange =
+    (index: number) =>
+    ({ target: { value } }: ChangeEvent<HTMLTextAreaElement>) => {
+      const toUpdateStories: DragonStory[] = [...storiesList];
+
+      toUpdateStories[index].story = value;
+
+      setStoriesList(toUpdateStories);
+    };
 
   return {
     disabledSubmit,
     isLoading,
+    name,
+    type,
+    storiesList,
+    handleNewStory,
     handleFormReset,
     handleFormSubmit,
     handleNameChange,
-    name,
     handleTypeChange,
-    type,
     handleStoryNameChange,
-    storyName,
     handleStoryDescriptionChange,
-    storyDescription,
+    handleStoryDelete,
   };
 };

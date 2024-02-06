@@ -4,6 +4,8 @@ import { BaseInput, BaseInputWrapper, BaseLabel } from "@/styles";
 
 export const TextArea = styled.textarea`
   ${BaseInput}
+  
+  resize: none;
 `;
 
 export const Label = styled.label`

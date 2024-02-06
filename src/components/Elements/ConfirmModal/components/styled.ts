@@ -1,8 +1,5 @@
 import styled from "styled-components";
 
-const modalHeight: string = "350px";
-const modalWidth: string = "500px";
-
 export const Backdrop = styled.div`
   position: fixed;
   width: 100vw;
@@ -15,15 +12,17 @@ export const Backdrop = styled.div`
 
 export const Dialog = styled.div`
   position: absolute;
-  top: calc(50% - ${modalHeight} / 2);
-  left: calc(50% - ${modalWidth} / 2);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: ${modalHeight};
-  width: ${modalWidth};
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
   background-color: #fffeeb;
-  padding: 48px;
+  padding: 24px;
   font-weight: 600;
   font-size: 22px;
   border-radius: 8px;
@@ -39,7 +38,9 @@ export const DialogBody = styled.div`
 
 export const DialogFooter = styled.div`
   display: flex;
+  width: 100%;
   justify-content: center;
+  margin-top: auto;
 
   > *:not(:first-of-type) {
     margin-left: 16px;

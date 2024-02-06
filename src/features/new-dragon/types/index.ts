@@ -7,14 +7,19 @@ export interface UseNewDragonReturn {
   isLoading: boolean;
   name: string;
   type: string;
-  storyName: string;
-  storyDescription: string;
+  storiesList: DragonStory[];
+  handleStoryDelete: (index: number) => () => void;
+  handleNewStory: () => void;
   handleFormReset: () => void;
   handleFormSubmit: (event: FormEvent<HTMLFormElement>) => void;
   handleNameChange: (event: ChangeEvent<HTMLInputElement>) => void;
   handleTypeChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  handleStoryNameChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  handleStoryDescriptionChange: (event: ChangeEvent<HTMLTextAreaElement>) => void;
+  handleStoryNameChange: (
+    index: number
+  ) => (event: ChangeEvent<HTMLInputElement>) => void;
+  handleStoryDescriptionChange: (
+    index: number
+  ) => (event: ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
 export interface DragonBasicData {

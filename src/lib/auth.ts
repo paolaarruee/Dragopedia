@@ -5,7 +5,7 @@ const STORAGE_USER_TOKEN_KEY = "user_token";
 const STORAGE_USER_LIST_KEY = "registered_users";
 
 export const initializeDatabase = (): void => {
-  const toRegisterUser: Array<UserCredentials> = [
+  const toRegisterUser: UserCredentials[] = [
     { username: "paola", password: "paola123" },
   ];
 
@@ -23,7 +23,7 @@ export const fakeAuthenticate = (
     STORAGE_USER_LIST_KEY
   );
 
-  const userList: Array<UserCredentials> =
+  const userList: UserCredentials[] =
     (stringifiedUserList && JSON.parse(stringifiedUserList)) ?? [];
 
   const foundUser: UserCredentials | undefined = userList.find(
