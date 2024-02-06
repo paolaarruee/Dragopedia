@@ -9,11 +9,13 @@ export const useDragonList = (): UseDragonListReturn => {
   const [dragonList, setDragonList] = useState<Dragon[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  useEffect(() => {
+  const getDragons = () => {
     getDragonList()
       .then(({ data }: AxiosResponse<Dragon[]>) => setDragonList(data))
       .finally(() => setIsLoading(false));
-  }, []);
+  };
+
+  useEffect(getDragons, []);
 
   return { dragonList, isLoading };
 };

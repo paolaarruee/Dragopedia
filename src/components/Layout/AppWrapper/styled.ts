@@ -22,6 +22,10 @@ export const ContentWrapper = styled.div`
 
 export const Container = styled.div`
   flex: 1;
-  padding: 0 48px 48px;
+  padding: 36px 84px 84px;
   overflow-y: auto;
+
+  @media (max-width: 1200px) {
+   padding: 36px 0 0; 
+  }
 `;

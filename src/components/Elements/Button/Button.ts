@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
+  display: flex;
+  justify-content: center;
   width: 100%;
   background-color: #1d504c;
-  padding: 16px 32px;
+  padding: 16px 0;
   font-size: 18px;
   font-weight: 300;
   text-transform: uppercase;

@@ -9,7 +9,6 @@ const SpinnerAnimation = keyframes`
 `;
 
 export const Loader = styled.span<LoaderProps>`
-  position: absolute;
   width: ${({ size }) => size || "100px"};
   height: ${({ size }) => size || "100px"};
   border-radius: 50%;
