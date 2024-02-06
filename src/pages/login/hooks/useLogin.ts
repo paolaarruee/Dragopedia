@@ -6,8 +6,7 @@ export const useLogin = (): UseLoginReturn => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
-  const invalidUsername = !username.length;
-  const invalidPassword = !password.length;
+  const invalidForm = !username.length || !password.length;
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
@@ -24,8 +23,7 @@ export const useLogin = (): UseLoginReturn => {
 
   return {
     handleSubmit,
-    invalidUsername,
-    invalidPassword,
+    invalidForm,
     handleUsernameChange,
     handlePasswordChange,
   };
