@@ -1,6 +1,7 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 
 import { UseLoginReturn } from "../types";
+import { doFakeLogin } from "../api/login";
 
 export const useLogin = (): UseLoginReturn => {
   const [username, setUsername] = useState<string>("");
@@ -10,7 +11,11 @@ export const useLogin = (): UseLoginReturn => {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
-    console.log('LOGIN: ', username, password)
+
+    doFakeLogin({ username, password }).then(
+      (res) => alert("AUTENTICADO COM SUCESSO"),
+      (err) => alert(alert("USUÁRIO INCORRETO OU INEXISTENTE")),
+    );
   };
 
   const handleUsernameChange = ({
