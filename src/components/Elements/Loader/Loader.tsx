@@ -17,3 +17,11 @@ export const Loader = styled.span<LoaderProps>`
   border-left: 4px solid #1d504c;
   animation: ${SpinnerAnimation} 800ms linear infinite;
 `;
+
+export const LoaderButtonWrapper = styled.div`
+  > span {
+    border-left-color: #fffeeb;
+  }
+
+  margin-right: 16px;
+`;

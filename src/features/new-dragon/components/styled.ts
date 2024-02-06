@@ -38,11 +38,3 @@ export const NewDragonActionButtons = styled.div`
     margin-left: 32px;
   }
 `;
-
-export const ButtonLoaderWrapper = styled.div`
-  > span {
-    border-left-color: #fffeeb;
-  }
-
-  margin-right: 16px;
-`;

@@ -57,11 +57,3 @@ export const DialogIcon = styled.div`
     }
   }
 `;
-
-export const DialogLoaderWrapper = styled.div`
-  > span {
-    border-left-color: #fffeeb;
-  }
-
-  margin-right: 16px;
-`;

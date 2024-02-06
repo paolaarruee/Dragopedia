@@ -1,7 +1,7 @@
 import { faWarning } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { Button, Loader } from "..";
+import { Button, Loader, LoaderButtonWrapper } from "..";
 import { ConfirmModalProps } from "./types";
 import * as S from "./components";
 
@@ -24,12 +24,12 @@ export const ConfirmModal = ({
           <Button type="button" onClick={handleCancel} disabled={isLoading}>
             Cancelar
           </Button>
-          
+
           <Button type="button" onClick={handleConfirm} disabled={isLoading}>
             {isLoading && (
-              <S.DialogLoaderWrapper>
+              <LoaderButtonWrapper>
                 <Loader size="24px" />
-              </S.DialogLoaderWrapper>
+              </LoaderButtonWrapper>
             )}
             Confirmar
           </Button>

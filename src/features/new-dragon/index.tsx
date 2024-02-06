@@ -1,4 +1,4 @@
-import { Button, FieldArea, Loader } from "@/components/Elements";
+import { Button, FieldArea, Loader, LoaderButtonWrapper } from "@/components/Elements";
 import { SectionContainer } from "@/components/Layout";
 import * as S from "./components";
 import { useNewDragon } from "./hooks";
@@ -65,9 +65,9 @@ export const NewDragon = () => {
 
           <Button type="submit" disabled={disabledSubmit}>
             {isLoading && (
-              <S.ButtonLoaderWrapper>
+              <LoaderButtonWrapper>
                 <Loader size="24px" />
-              </S.ButtonLoaderWrapper>
+              </LoaderButtonWrapper>
             )}
             Cadastrar
           </Button>
