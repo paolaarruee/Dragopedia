@@ -35,6 +35,7 @@ export const Dialog = styled.div`
 export const DialogBody = styled.div`
   ${BaseDialogBody}
 
+  align-self: flex-start;
   align-items: flex-start;
   padding-bottom: 24px;
 `;
