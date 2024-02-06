@@ -15,6 +15,7 @@ import {
   Loader,
   IconButton,
   ConfirmModal,
+  EmptyTable,
 } from "@/components/Elements";
 
 export const DragonsList = () => {
@@ -92,6 +93,14 @@ export const DragonsList = () => {
                         </TableBodyCell>
                       </TableRow>
                     )
+                  )}
+
+                  {!dragonList.length && (
+                    <TableRow>
+                      <TableBodyCell colSpan={7}>
+                        <EmptyTable>Nenhum dragão cadastado</EmptyTable>
+                      </TableBodyCell>
+                    </TableRow>
                   )}
                 </TableBody>
               </Table>

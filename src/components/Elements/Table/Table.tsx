@@ -51,3 +51,8 @@ export const TableHeadCell = styled.th`
 export const TableBodyCell = styled.td`
   padding: 16px 32px;
 `;
+
+export const EmptyTable = styled.div`
+  padding: 32px;
+  text-align: center;
+`;
