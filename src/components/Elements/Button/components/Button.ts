@@ -10,14 +10,19 @@ export const Button = styled.button`
   color: #fffeeb;
   border: none;
   border-radius: 4px;
-  cursor: pointer;
   transition: 0.1s ease-in-out;
 
-  &:hover {
+  &:hover:not(:disabled) {
     filter: brightness(130%);
+    cursor: pointer;
   }
 
-  &:active {
+  &:active:not(:disabled) {
     filter: brightness(110%);
+  }
+
+  &:disabled {
+    background-color: #e4e4e4;
+    color: #c5c5c5;
   }
 `;

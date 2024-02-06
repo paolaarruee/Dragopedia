@@ -1,12 +1,9 @@
-export type LoginCredentials = {
-  username: string;
-  password: string;
-};
-
-export type UseLoginParams = {
-  credentials: LoginCredentials;
-};
+import { ChangeEvent, FormEvent } from "react";
 
 export type UseLoginReturn = {
-    doLogin: (credentials: LoginCredentials) => void;
+  invalidUsername: boolean;
+  invalidPassword: boolean;
+  handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
+  handleUsernameChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  handlePasswordChange: (event: ChangeEvent<HTMLInputElement>) => void;
 };

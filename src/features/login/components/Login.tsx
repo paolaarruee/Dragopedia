@@ -3,19 +3,19 @@ import * as S from "./styled";
 import { useLogin } from "../hooks/useLogin";
 
 export const Login = () => {
-  const { doLogin } = useLogin();
+  const { handleSubmit, invalidUsername, invalidPassword, handleUsernameChange, handlePasswordChange } = useLogin();
 
   return (
     <S.LoginContainer>
-      <S.LoginFormArea onSubmit={(a) => console.log(a)}>
+      <S.LoginFormArea onSubmit={handleSubmit}>
         <S.LoginFormAreaLogo>Dragopédia</S.LoginFormAreaLogo>
 
         <S.LoginFormAreaFieldsWrapper>
-          <FieldArea label="Nome de usuário" type="text" />
-          <FieldArea label="Senha" type="password" />
+          <FieldArea label="Nome de usuário" type="text" onChange={handleUsernameChange} />
+          <FieldArea label="Senha" type="password" onChange={handlePasswordChange} />
         </S.LoginFormAreaFieldsWrapper>
 
-        <Button label="Entrar" onClick={() => alert("Login action")} />
+        <Button type="submit" disabled={invalidUsername || invalidPassword}>Entrar</Button>
       </S.LoginFormArea>
     </S.LoginContainer>
   );
