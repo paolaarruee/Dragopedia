@@ -2,9 +2,14 @@ import { Link } from "react-router-dom";
 
 import * as S from "./styled";
 import { AuthContextData, useAuth } from "@/providers/auth";
+import { useNavbar } from "./hooks/useNavbar";
+import { MenuItem } from "./types";
 
 export const Navbar = () => {
   const { handleLogout }: AuthContextData = useAuth();
+  const { showingBurgerMenu, toggleBurgerMenu, menuItems } = useNavbar({
+    handleLogout,
+  });
 
   return (
     <S.NavbarWrapper>
@@ -15,17 +20,31 @@ export const Navbar = () => {
         </S.NavbarLogo>
 
         <S.Menu>
-          <S.MenuItem>
-            <Link to="/inicio">Início</Link>
-          </S.MenuItem>
-
-          <S.MenuItem>
-            <Link to="/lista-dragoes">Dragões</Link>
-          </S.MenuItem>
-
-          <S.MenuItem onClick={handleLogout}>Sair</S.MenuItem>
+          {menuItems.map(({ label, params }: MenuItem) => (
+            <S.DefaultMenuItem>
+              <Link {...params}>{label}</Link>
+            </S.DefaultMenuItem>
+          ))}
         </S.Menu>
+
+        <S.BurgerMenu onClick={toggleBurgerMenu}>
+          <S.BurgerMenuIcon>
+            <S.BurgerMenuLine />
+            <S.BurgerMenuLine />
+            <S.BurgerMenuLine />
+          </S.BurgerMenuIcon>
+        </S.BurgerMenu>
       </S.NavbarContainer>
+
+      {showingBurgerMenu && (
+        <S.BurgerMenuOptions>
+          {menuItems.map(({ label, params }: MenuItem) => (
+            <S.BurgerMenuItem>
+              <Link {...params}>{label}</Link>
+            </S.BurgerMenuItem>
+          ))}
+        </S.BurgerMenuOptions>
+      )}
     </S.NavbarWrapper>
   );
 };

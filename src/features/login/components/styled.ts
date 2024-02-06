@@ -17,7 +17,7 @@ export const LoginFormArea = styled.form`
   padding: 176px 32px 0 72px;
   height: 100%;
   width: 25%;
-  background: #fffeeb;
+  background-color: #fffeeb;
 
   &::before {
     content: "";
@@ -112,7 +112,7 @@ export const LoginFormAreaLogoImage = styled.img`
 `;
 
 export const LoginFormAreaLogoText = styled.h1`
-  font-family: "Enchanted Land", sans-serif;
+  font-family: "Enchanted Land", "Montserrat", sans-serif;
   font-size: 92px;
   letter-spacing: 4px;
   margin: 0;

@@ -13,11 +13,13 @@ export const MainContainer = () => {
 
   return (
     <S.MainWrapper>
-      <Navbar />
+      <S.GradientWrapper>
+        <Navbar />
 
-      <S.ContentWrapper>
-        <Outlet />
-      </S.ContentWrapper>
+        <S.ContentWrapper>
+          <Outlet />
+        </S.ContentWrapper>
+      </S.GradientWrapper>
     </S.MainWrapper>
   );
 };
