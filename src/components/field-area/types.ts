@@ -1,3 +1,4 @@
 export type FieldAreaProps = {
-    label: string;
-} 
+  label: string;
+  type: string;
+};
