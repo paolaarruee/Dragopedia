@@ -27,6 +27,38 @@ export const LoginFormArea = styled.div`
     right: -898px;
     height: 100%;
     width: 899px;
+
+    @media (max-width: 800px) {
+      rotate: 90deg;
+      top: initial;
+      right: initial;
+      bottom: -898px;
+      width: 899px;
+      height: 899px;
+    }
+  }
+
+  @media (max-width: 2450px) {
+    width: 30%;
+  }
+
+  @media (max-width: 1550px) {
+    padding-top: 118px;
+    width: 40%;
+  }
+
+  @media (max-width: 1200px) {
+    width: 50%;
+  }
+
+  @media (max-width: 900px) {
+    width: 50%;
+  }
+
+  @media (max-width: 800px) {
+    height: 60%;
+    width: 100%;
+    padding: 48px 64px;
   }
 `;
 
@@ -38,6 +70,10 @@ export const LoginFormAreaFieldsWrapper = styled.div`
 
   > * + * {
     margin-top: 24px;
+  }
+
+  @media (max-width: 800px) {
+    margin-top: 64px;
   }
 `;
 
