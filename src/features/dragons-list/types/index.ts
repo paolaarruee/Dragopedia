@@ -1,12 +1,10 @@
-export interface UseDragonListReturn {
+export interface UseDragonReturn {
   dragonList: Dragon[];
   isLoading: boolean;
-}
-
-export interface DragonExtraData {
-  name: string;
-  type: string;
-  id: string;
+  showingConfirmModal: boolean;
+  confirmDelete: () => void;
+  closeConfirmModal: () => void;
+  handleDelete: (id: string) => () => void;
 }
 
 export interface Dragon {
@@ -16,4 +14,10 @@ export interface Dragon {
   histories: string;
   id: string;
   data: DragonExtraData;
+}
+
+export interface DragonExtraData {
+  name: string;
+  type: string;
+  id: string;
 }

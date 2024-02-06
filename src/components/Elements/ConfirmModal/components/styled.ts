@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const modalHeight: string = "300px";
+const modalHeight: string = "350px";
 const modalWidth: string = "500px";
 
 export const Backdrop = styled.div`
@@ -23,7 +23,7 @@ export const Dialog = styled.div`
   height: ${modalHeight};
   width: ${modalWidth};
   background-color: #fffeeb;
-  padding: 72px 48px 48px;
+  padding: 48px;
   font-weight: 600;
   font-size: 22px;
   border-radius: 8px;
@@ -32,6 +32,7 @@ export const Dialog = styled.div`
 
 export const DialogBody = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 `;
@@ -42,5 +43,17 @@ export const DialogFooter = styled.div`
 
   > *:not(:first-of-type) {
     margin-left: 16px;
+  }
+`;
+
+export const DialogIcon = styled.div`
+  margin-bottom: 28px;
+  
+  svg {
+    font-size: 64px;
+
+    path {
+      color: orange;
+    }
   }
 `;

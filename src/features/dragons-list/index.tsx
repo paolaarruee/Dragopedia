@@ -2,9 +2,9 @@ import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
-import { useDragonList } from "./hooks/useDragonList";
+import { useDragon } from "./hooks/useDragon";
 import * as S from "./components/styled";
-import { Dragon, UseDragonListReturn } from "./types";
+import { Dragon, UseDragonReturn } from "./types";
 import {
   Table,
   TableHead,
@@ -18,11 +18,24 @@ import {
 } from "@/components/Elements";
 
 export const DragonsList = () => {
-  const { dragonList, isLoading }: UseDragonListReturn = useDragonList();
+  const {
+    dragonList,
+    isLoading,
+    showingConfirmModal,
+    handleDelete,
+    closeConfirmModal,
+    confirmDelete,
+  }: UseDragonReturn = useDragon();
 
   return (
     <>
-      <ConfirmModal>Teste</ConfirmModal>
+      {showingConfirmModal && (
+        <ConfirmModal
+          handleCancel={closeConfirmModal}
+          handleConfirm={confirmDelete}
+          disableActions={isLoading}
+        />
+      )}
 
       <S.DragonsContainer>
         <S.DragonsTitleWrapper>
@@ -69,7 +82,10 @@ export const DragonsList = () => {
                         <TableBodyCell>{}</TableBodyCell>
                         <TableBodyCell>
                           <S.DeleteDragonButtonWrapper>
-                            <IconButton title="Excluir">
+                            <IconButton
+                              title="Excluir"
+                              onClick={handleDelete(id)}
+                            >
                               <FontAwesomeIcon icon={faTrash} />
                             </IconButton>
                           </S.DeleteDragonButtonWrapper>
