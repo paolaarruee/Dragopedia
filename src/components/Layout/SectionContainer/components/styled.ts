@@ -8,6 +8,10 @@ export const SectionContainer = styled.section`
   background-color: rgba(255, 254, 235, 0.85);
   border-radius: 8px;
   overflow-y: auto;
+
+  @media (max-width: 550px) {
+    border-radius: 0;
+  }
 `;
 
 export const SectionTitle = styled.h1`
@@ -22,7 +26,7 @@ export const SectionTitle = styled.h1`
 export const SectionTitleWrapper = styled.div`
   position: relative;
   width: 100%;
-  padding: 48px;
+  padding: 32px 48px;
   background-color: #fffeeb;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 `;

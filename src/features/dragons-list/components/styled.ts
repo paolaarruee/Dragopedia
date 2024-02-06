@@ -6,10 +6,6 @@ export const DragonsListContainer = styled.div`
   align-self: flex-start;
   padding: 24px;
   overflow-x: auto;
-
-  @media (max-width: 1060px) {
-    padding: 0;
-  }
 `;
 
 export const DeleteDragonButtonWrapper = styled.div`
@@ -25,7 +21,7 @@ export const DeleteDragonButtonWrapper = styled.div`
 
 export const DragonHistoryCell = styled.span`
   display: block;
-  max-width: 500px;
+  max-width: 400px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

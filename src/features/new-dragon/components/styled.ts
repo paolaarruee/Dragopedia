@@ -12,19 +12,19 @@ export const NewDragonFormContainer = styled.form`
 export const NewDragonFieldWrapper = styled.div`
   width: 400px;
 
-  @media (max-width: 490px) {
+  @media (max-width: 550px) {
     width: 100%;
   }
 
   &:not(:first-of-type) {
-    margin-top: 32px;
+    margin-top: 16px;
   }
 `;
 
 export const NewDragonActionButtons = styled.div`
   display: flex;
   width: 400px;
-  margin-top: 72px;
+  margin-top: 64px;
 
   @media (max-width: 490px) {
     width: 100%;
