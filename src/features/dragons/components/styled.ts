@@ -20,18 +20,22 @@ export const DragonsTitle = styled.h1`
 `;
 
 export const DragonsTitleWrapper = styled.div`
+  position: relative;
   width: 100%;
   padding: 48px;
   background-color: #fffeeb;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 `;
 
 export const DragonsContentWrapper = styled.div`
+  flex: 1;
   width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 48px 48px 0;
+
+  overflow-y: auto;
 
   @media (max-width: 1060px) {
     padding: 0;

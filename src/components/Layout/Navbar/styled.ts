@@ -26,7 +26,9 @@ export const Menu = styled.ul`
   }
 `;
 
-export const BurgerMenu = styled.ul`
+export const BurgerMenu = styled.button`
+  background-color: transparent;
+  border: none;
   display: none;
   margin-left: auto;
   cursor: pointer;
@@ -40,19 +42,12 @@ export const BurgerMenuIcon = styled.span`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 42px;
-  width: 48px;
-  padding: 12px;
-`;
-
-export const BurgerMenuLine = styled.span`
-  width: 100%;
-  height: 1px;
-  background-color: white;
+  font-size: 28px;
 `;
 
 export const BurgerMenuOptions = styled.ul`
-  position: absolute;
+  position: fixed;
+  z-index: 100;
   display: flex;
   flex-direction: column;
   top: 138px;

@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-import * as S from "./styled";
 import { AuthContextData, useAuth } from "@/providers/auth";
+import * as S from "./styled";
 import { useNavbar } from "./hooks/useNavbar";
 import { MenuItem } from "./types";
 
@@ -29,9 +31,7 @@ export const Navbar = () => {
 
         <S.BurgerMenu onClick={toggleBurgerMenu}>
           <S.BurgerMenuIcon>
-            <S.BurgerMenuLine />
-            <S.BurgerMenuLine />
-            <S.BurgerMenuLine />
+            <FontAwesomeIcon icon={faBars} />
           </S.BurgerMenuIcon>
         </S.BurgerMenu>
       </S.NavbarContainer>

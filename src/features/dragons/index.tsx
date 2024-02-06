@@ -1,6 +1,6 @@
 import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 import { useDragonList } from "./hooks/useDragonList";
 import * as S from "./components/styled";
@@ -55,7 +55,7 @@ export const Dragons = () => {
                       <TableBodyCell>
                         <S.DeleteDragonButtonWrapper>
                           <IconButton>
-                            <FontAwesomeIcon icon={faTrashCan} />
+                            <FontAwesomeIcon icon={faTrash} />
                           </IconButton>
                         </S.DeleteDragonButtonWrapper>
                       </TableBodyCell>
