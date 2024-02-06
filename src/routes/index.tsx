@@ -1,15 +1,24 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 
-import { Login } from "@/pages/login";
-import { DragonList } from "@/pages";
+import { Login, DragonList } from "@/features";
+import { MainContainer } from "@/components/Layout";
+import { Home } from "@/features/home";
 
-export const RouterConfig = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
   },
+
   {
-    path: "/lista-dragoes",
-    element: <DragonList />,
+    element: <MainContainer />,
+    children: [
+      { path: "/home", element: <Home /> },
+      { path: "/lista-dragoes", element: <DragonList /> },
+    ],
+  },
+  {
+    path: "*",
+    element: <Navigate to="/login" />,
   },
 ]);

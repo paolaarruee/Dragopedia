@@ -1,20 +1,20 @@
 import { AxiosResponse } from "axios";
 
-export type UseDragonListReturn = {
+export interface UseDragonListReturn {
   getAllDragons: () => Promise<AxiosResponse>;
-};
+}
 
-export type DragonExtraData = {
+export interface DragonExtraData {
   name: string;
   type: string;
   id: string;
-};
+}
 
-export type Dragon = {
+export interface Dragon {
   createdAt: string;
   name: string;
   type: string;
   histories: string;
   id: string;
   data: DragonExtraData;
-};
+}

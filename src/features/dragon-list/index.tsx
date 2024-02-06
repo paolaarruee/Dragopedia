@@ -6,4 +6,6 @@ export const DragonList = () => {
   const { getAllDragons } = useDragonList();
 
   console.log(getAllDragons().then(({ data }) => console.log(data)));
+
+  return <>Lista Dragões</>;
 };

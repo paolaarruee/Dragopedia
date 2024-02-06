@@ -1,1 +1,1 @@
-export * from "./components/MainContainer";
+export * from "./MainContainer";

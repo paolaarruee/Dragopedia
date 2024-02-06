@@ -1,5 +1,5 @@
 import * as S from "./styled";
-import { FieldAreaProps } from "../types";
+import { FieldAreaProps } from "./types";
 
 export const FieldArea = ({ label, type, onChange }: FieldAreaProps) => (
   <S.FieldAreaWrapper>

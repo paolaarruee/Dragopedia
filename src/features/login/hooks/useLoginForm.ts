@@ -1,7 +1,7 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 
 import { UseLoginFormReturn } from "../types";
-import { doFakeLogin } from "../api/login";
+import { AuthContextData, useAuth } from "@/providers/auth";
 
 export const useLoginForm = (): UseLoginFormReturn => {
   const [username, setUsername] = useState<string>("");
@@ -9,16 +9,17 @@ export const useLoginForm = (): UseLoginFormReturn => {
   const [loginError, setLoginError] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const disabledSubmit =
-    !username.length || !password.length || isLoading;
+  const { handleLogin }: AuthContextData = useAuth();
+
+  const disabledSubmit = !username.length || !password.length || isLoading;
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
 
     setIsLoading(true);
 
-    doFakeLogin({ username, password })
-      .then(() => alert("AUTENTICADO COM SUCESSO"))
+    handleLogin({ username, password })
+      .then()
       .catch(() => setLoginError(true))
       .finally(() => setIsLoading(false));
   };

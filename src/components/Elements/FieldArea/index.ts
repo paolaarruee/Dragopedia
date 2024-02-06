@@ -1,2 +1,2 @@
-export * from "./components/FieldArea";
+export * from "./FieldArea";
 export * from "./types";

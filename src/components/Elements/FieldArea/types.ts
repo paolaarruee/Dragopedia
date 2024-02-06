@@ -1,7 +1,7 @@
 import { ChangeEvent } from "react";
 
-export type FieldAreaProps = {
+export interface FieldAreaProps {
   label: string;
   type: string;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-};
+}

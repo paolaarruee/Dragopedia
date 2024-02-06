@@ -94,7 +94,7 @@ export const LoginFormAreaFieldsWrapper = styled.div`
   }
 `;
 
-export const LoginFormAreaLogo = styled.h1`
+export const LoginFormAreaLogo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;

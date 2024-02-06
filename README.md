@@ -13,7 +13,6 @@ Dragopédia é um projeto criado para um desafio de front-end proposto pela DB, 
 
 * React.js 
 * TypeScript 
-* Vite
 * Styled Components
 * Axios
 * ESLint
@@ -23,8 +22,7 @@ Dragopédia é um projeto criado para um desafio de front-end proposto pela DB, 
 
 
 
-
-Obs: para o desenvolvimento da estrutura do login, implementei uma estrutura de login fake/mockada utilizando o localStorage como base de dados. Implementei mecanismos também para "atrasar" a autenticação para tornar a experiência de login mais realista, de forma que seja possível aprimorar ainda mais a experiência do usuário.
+Obs: para o desenvolvimento da estrutura do login, implementei uma estrutura de login fake utilizando o localStorage como base de dados.
 
 
 Para rodar o projeto, basta rodar o comando `npm run dev`.
