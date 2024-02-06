@@ -3,11 +3,11 @@ import { useNewDragon } from "./hooks";
 import { UseNewDragonReturn } from "./types";
 
 export const NewDragon = () => {
-  const useNewDragonReturn: UseNewDragonReturn = useNewDragon();
+  const { newDragonRequest }: UseNewDragonReturn = useNewDragon();
 
   return (
     <SectionContainer title="Cadastrar Dragão">
-      <DragonFormContainer {...useNewDragonReturn} />
+      <DragonFormContainer saveRequest={newDragonRequest} />
     </SectionContainer>
   );
 };

@@ -8,22 +8,21 @@ import { Loader } from "@/components/Elements";
 export const EditDragon = () => {
   const { id }: Readonly<Params<string>> = useParams();
 
-  const useEditDragonReturn: UseEditDragonReturn = useEditDragon({
-    id,
-  });
-
   if (!id) {
     return <Navigate to="/lista-dragoes" />;
   }
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { editDragonRequest, fetchedData, isFetching }: UseEditDragonReturn = useEditDragon({
+    id,
+  });
+
   return (
     <SectionContainer title="Editar Dragão">
       <>
-        {!useEditDragonReturn.isFetching && (
-          <DragonFormContainer {...useEditDragonReturn} />
-        )}
+        {!isFetching && <DragonFormContainer data={fetchedData} saveRequest={editDragonRequest} />}
 
-        {useEditDragonReturn.isFetching && <Loader size="100px" />}
+        {isFetching && <Loader size="100px" />}
       </>
     </SectionContainer>
   );
