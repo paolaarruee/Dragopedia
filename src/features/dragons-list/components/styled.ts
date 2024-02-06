@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const DragonsListContainer = styled.div`
   width: 100%;
+  height: 100%;
   align-self: flex-start;
-  padding-bottom: 48px;
+  padding: 24px;
   overflow-x: auto;
 
   @media (max-width: 1060px) {
@@ -12,8 +13,14 @@ export const DragonsListContainer = styled.div`
 `;
 
 export const DeleteDragonButtonWrapper = styled.div`
-  display: flex;
-  justify-content: center;
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+  }
 `;
 
 export const DragonHistoryCell = styled.span`

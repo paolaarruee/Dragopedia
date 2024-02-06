@@ -13,9 +13,9 @@ import {
   TableBodyCell,
   TableRow,
   Loader,
-  IconButton,
   ConfirmModal,
   EmptyTable,
+  Button,
 } from "@/components/Elements";
 import { SectionContainer } from "@/components/Layout";
 
@@ -73,9 +73,9 @@ export const DragonsList = () => {
                         <TableBodyCell>{id}</TableBodyCell>
                         <TableBodyCell>
                           <S.DeleteDragonButtonWrapper title="Excluir">
-                            <IconButton type="button" onClick={handleDelete(id)}>
+                            <Button type="button" onClick={handleDelete(id)}>
                               <FontAwesomeIcon icon={faTrash} />
-                            </IconButton>
+                            </Button>
                           </S.DeleteDragonButtonWrapper>
                         </TableBodyCell>
                       </TableRow>

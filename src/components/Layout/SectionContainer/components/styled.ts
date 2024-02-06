@@ -33,7 +33,6 @@ export const SectionContentWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 48px 48px 0;
 
   overflow-y: auto;
 
